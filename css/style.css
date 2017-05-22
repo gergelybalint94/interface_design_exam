@@ -341,6 +341,7 @@ header {
   left: 0; }
 
 #signup-container {
+  position: relative;
   width: 600px;
   height: 450px;
   margin: 0 auto;
@@ -356,7 +357,7 @@ header {
   align-items: center; }
 
 .signup-container-child h1 {
-  padding-top: 40px;
+  padding-top: 30px;
   font-size: 20px; }
 
 .signup-container-child:not(:first-child) {
@@ -399,6 +400,9 @@ header {
   text-transform: uppercase;
   text-align: center; }
 
+#submit-registration:hover {
+  cursor: pointer; }
+
 #signup-facebook, #signup-google {
   width: 190px;
   height: 36px;
@@ -411,6 +415,16 @@ header {
 #signup-facebook {
   margin-bottom: 36px;
   background: #3b5998; }
+
+#close-signup-container {
+  font-size: 20px;
+  color: gray;
+  position: absolute;
+  right: 10px;
+  top: 10px; }
+
+#close-signup-container:hover {
+  cursor: pointer; }
 
 /*
 	--------------------------

@@ -105,6 +105,7 @@
 		</div>
 		<div id="registration-area" data-page-name="registration-page">
 			<div id="signup-container">
+				<div id="close-signup-container" class="fa fa-times"></div>
 				<div class="signup-container-child">
 					<h1 class="fontWeight-medium">Sign up</h1>
 				</div>
