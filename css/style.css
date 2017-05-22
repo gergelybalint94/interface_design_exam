@@ -325,10 +325,13 @@ header {
   background-image: url("../assets/images/map_bottom.png"); }
 
 /*registration page rules*/
+#registration-wrap {
+  display:none;
+}
+
 #registration-area {
-  display: none;
   transition: 1s;
-  /*display: flex;*/
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
@@ -336,7 +339,7 @@ header {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0; }
 
