@@ -1,9 +1,25 @@
-/*
+// CLICK EVENTS:
+// ██████████████████████████████
 
-FUNCTIONS:
-██████████████████████████████
+// Redirect when clicking on elements with 'data-href' attribute:
+$(document).on('click', '[data-href]', function(){
+	window.location.href = $( this ).attr('data-href');
+});
 
-*/
+
+
+
+
+
+
+
+
+
+
+
+
+// FUNCTIONS:
+// ██████████████████████████████
 
 // Function to open sidebar menu:
 $(document).on('click', '#sandwich-icon', function(){

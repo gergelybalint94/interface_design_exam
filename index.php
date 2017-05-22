@@ -50,7 +50,7 @@
 
 						<form>
 							<input type="text" name="email" placeholder="Your email">
-							<div class="buttons main-buttons">Submit</div>
+							<div class="buttons main-buttons links-inactive">Submit</div>
 						</form>
 
 					</div>
