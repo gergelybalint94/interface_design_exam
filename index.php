@@ -103,6 +103,32 @@
 			<section class="full-screen-covers" id="bottom-map"></section>
 
 		</div>
+		<div id="registration-area" data-page-name="registration-page">
+			<div id="signup-container">
+				<div class="signup-container-child">
+					<h1 class="fontWeight-medium">Sign up</h1>
+				</div>
+				<div class="signup-container-child">
+					<div class="signup-container-fields">
+						<div id="signup-facebook"><div class="fa fa-facebook"></div> Signup with Facebook</div>
+						<div id="signup-google"><div class="fa fa-google"></div> Signup with Google+</div>
+					</div>
+					<form class="forms" id="signup-form" method="post">
+					<div class="signup-container-fields">
+						<div id="signup-names">
+							<input type="text" name="firstName" id="firstName" placeholder="First Name">
+							<input type="text" name="lastName" id="lastName" placeholder="Last Name">
+						</div>
+						<input type="email" name="email" id="email" placeholder="Email">
+						<input type="password" name="password" id="password" placeholder="password">
+						<input type="password" name="password" id="password" placeholder="Repeat Password">
+						<div type="submit" id="submit-registration" name="submit-signup" class="fontWeight-medium">Sign up</div>
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
 
 		<!-- JQUERY LINKED IN BELOW: -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
