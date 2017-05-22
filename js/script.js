@@ -40,13 +40,17 @@ $(document).on('click', '.closer-elements', function(){
 //Function for the popping up signup box
 $(document).on("click", "#account-icon", function(){
 	console.log("works");
-	$("#registration-area").show();
-	$("#registration-area").css("display", "flex");
+	$("#registration-wrap").fadeIn('fast');
 });
 
 //Function to close the signup container
-$(document).on("click", "#close-signup-container", function(){
-	$("#registration-area").hide();
+$(document).on("click", ".close-signup-onclick-elements", function(){
+	$("#registration-wrap").fadeOut('fast');
+});
+
+// Ignore click if it happens on a child element:
+$(document).on('click', ".close-signup-onclick-elements *", function(e) {
+	e.stopPropagation();
 });
 
 
@@ -63,7 +67,7 @@ function createUser(firstName, lastName, password, email ){
 		"dataType":"json",
 		"data":{"firstName":sFirstName,"lastName":sLastName,"password":sPassword, "email":sEmail},
 	}).done(function(sData){
-		$("#registration-area").hide();
+		$("#registration-wrap").fadeOut();
 });
 };
 
