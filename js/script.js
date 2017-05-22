@@ -28,6 +28,13 @@ $(document).on("click", "#account-icon", function(){
 	$("#registration-area").css("display", "flex");
 });
 
+//Function to close the signup container
+$(document).on("click", "#close-signup-container", function(){
+	$("#registration-area").hide();
+});
+
+
+
 // Function to save a new user
 function createUser(firstName, lastName, password, email ){
 	var sFirstName = firstName;
