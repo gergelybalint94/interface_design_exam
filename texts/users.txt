@@ -1,0 +1,30 @@
+[
+    {
+        "sUniqueId": 10001,
+        "firstName": "",
+        "lastName": "",
+        "password": "",
+        "email": ""
+    },
+    {
+        "sUniqueId": 10002,
+        "firstName": "",
+        "lastName": "",
+        "password": "",
+        "email": ""
+    },
+    {
+        "sUniqueId": 10003,
+        "firstName": "",
+        "lastName": "",
+        "password": "",
+        "email": ""
+    },
+    {
+        "sUniqueId": 10004,
+        "firstName": "",
+        "lastName": "",
+        "password": "",
+        "email": ""
+    }
+]

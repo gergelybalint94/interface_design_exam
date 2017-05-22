@@ -23,7 +23,8 @@ $(document).on('click', '.closer-elements', function(){
 
 //Function for the popping up signup box
 $(document).on("click", "#account-icon", function(){
-	console.log("works")
+	console.log("works");
+	$("#registration-area").show();
 	$("#registration-area").css("display", "flex");
 });
 
@@ -39,7 +40,7 @@ function createUser(firstName, lastName, password, email ){
 		"dataType":"json",
 		"data":{"firstName":sFirstName,"lastName":sLastName,"password":sPassword, "email":sEmail},
 	}).done(function(sData){
-		$("#registration-area").css("display", "none");
+		$("#registration-area").hide();
 });
 };
 
