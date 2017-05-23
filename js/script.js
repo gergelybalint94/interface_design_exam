@@ -2,6 +2,7 @@
 // ██████████████████████████████
 
 var sActualPage	= document.location.href.match(/[^\/]+$/)[0];
+var loggedIn = false;
 
 
 
@@ -100,6 +101,16 @@ $(document).on('click', '[data-href]', function(){
 // FUNCTIONS:
 // ██████████████████████████████
 
+//Self calling function to check if someone is logged in or not
+$(document).on("ready", function(){
+	if(localStorage.getItem("name")===null){
+		console.log("not logged in");
+	}else{
+		console.log("logged in");
+		loggedIn = true;
+	}
+});
+
 // Function to populate grid areas:
 function fnPopulateGridArea( sGridAreaSelector, ajGridData ){
 	var sBluePrint = 
@@ -141,7 +152,7 @@ $(document).on("click", "#account-icon", function(){
 });
 
 //Function to close the login container
-$(document).on("click", ".close-login-onclick-elements", function(){
+$(document).on("click", "#close-login-container", function(){
 	$("#login-wrap").fadeOut('fast');
 });
 
@@ -189,4 +200,27 @@ $("#submit-registration").on("click",function(){
 	var sPassword = $("#password").val();
 	var sEmail = $("#email").val();
 	createUser(sFirstName, sLastName, sPassword, sEmail);
+});
+
+//Function for logging in
+$("#submit-login").on("click",function(){
+	var sEmail = $("#login-email").val();
+	var sPassword = $("#login-password").val();
+	$.ajax({
+		"method":"POST",
+		"url":"api/api-log-in.php",
+		"data":{"email":sEmail,"password":sPassword},
+	}).done(function(sData){
+		if(sData){
+			var obj = $.parseJSON(sData);
+			var email = obj.email;
+			var name = obj.name;
+			localStorage.setItem("email",email);
+			localStorage.setItem("name",name);
+			$("#login-wrap").fadeOut("fast");
+			loggedIn=true;
+		}else{
+			alert("Invalid email or password, please try again");
+		};
+	});
 });

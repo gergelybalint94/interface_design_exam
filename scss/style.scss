@@ -305,9 +305,6 @@ header {
 #registration-wrap, #login-wrap {
   display:none;
 }
-#login-wrap {
-	display:flex;
-}
 
 #registration-area, #login-area {
   transition: 1s;
@@ -411,7 +408,6 @@ header {
 
 #open-registration{
 	transition:0.25s;
-
 }
 #open-registration:hover{
 	cursor:pointer;
