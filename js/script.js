@@ -3,7 +3,11 @@
 
 // Redirect when clicking on elements with 'data-href' attribute:
 $(document).on('click', '[data-href]', function(){
-	window.location.href = $( this ).attr('data-href');
+	
+	// Only if link is active:
+	if( $(this).hasClass('links-active') ){
+		window.location.href = $( this ).attr('data-href');
+	}
 });
 
 

@@ -7,7 +7,7 @@
 		</div>
 
 		<!-- HEADER LOGO: -->
-		<div class="header-elements links-active" id="header-logo"></div>
+		<div class="header-elements links-active" id="header-logo" data-href="index.php"></div>
 
 		<!-- SHORTCUT ICONS: -->
 		<div class="header-elements" id="header-shortcuts-wrap">

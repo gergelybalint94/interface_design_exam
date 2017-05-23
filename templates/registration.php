@@ -1,5 +1,5 @@
 <div id="registration-wrap">
-	<div id="registration-area" class="close-signup-onclick-elements" data-page-name="registration-page">
+	<div id="registration-area" class="close-signup-onclick-elements">
 		<div id="signup-container">
 			<div id="close-signup-container" class="fa fa-times close-signup-onclick-elements"></div>
 			<div class="signup-container-child">
