@@ -12,6 +12,14 @@
 		<!-- SIDEBAR: -->
 		<?php require_once('templates/sidebar.php'); ?>
 
+
+
+
+
+
+
+		
+
 		<!-- MAIN PAGE CONTENT: -->
 		<div class="page-contents" data-page-name="index-page">
 			<section class="full-screen-covers" id="first-cover-picture"></section>
@@ -100,6 +108,14 @@
 			<section class="full-screen-covers" id="bottom-map"></section>
 
 		</div>
+
+
+
+
+
+
+
+		
 
 		<!-- FOOTER: -->
 		<?php require_once('templates/footer.php'); ?>
