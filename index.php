@@ -126,6 +126,9 @@
 		<!-- REGISTRATION POPUP: -->
 		<?php require_once('templates/registration.php'); ?>
 
+		<!-- LOGOUT POPUP: -->
+		<?php require_once('templates/logout.php'); ?>
+
 
 		<!-- JQUERY LINKED IN BELOW: -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
