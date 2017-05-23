@@ -287,9 +287,6 @@ header {
 #registration-wrap, #login-wrap {
   display: none; }
 
-#login-wrap {
-  display: flex; }
-
 #registration-area, #login-area {
   transition: 1s;
   display: flex;
