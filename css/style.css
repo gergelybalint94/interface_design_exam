@@ -41,12 +41,18 @@
 html, body {
   width: 100%;
   height: 100%;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  background:#EFEFEF; }
 
 h4 {
   font-weight: 400;
   font-size: 30px;
-  padding: 0 1em; }
+  padding: 0 1em;
+  text-align: center; }
+
+h5 {
+  text-align:center;
+}
 
 p {
   padding: 0 1em; }
@@ -58,6 +64,10 @@ input {
   font-size: 14px;
   border-radius: 2px;
   border: 1px solid gray; }
+
+section {
+  width:100%;
+}
 
 /* -- GENERAL PAGE RULES: -- */
 .content-max-width-narrowest {
@@ -77,7 +87,8 @@ input {
   width: 100%;
   padding-top: 84px;
   /* 1px smaller than header's height */
-  flex-direction: column; }
+  flex-direction: column;
+  align-items: center; }
 
 .full-screen-covers {
   height: 100vh;
@@ -113,6 +124,39 @@ input {
   background-position: center;
 }
 
+.grid-areas {
+  display:flex;
+  width:100%;
+  justify-content:center;
+  flex-wrap: wrap;
+}
+
+.grids {
+  display:flex;
+  width:200px;
+  height:200px;
+  margin:30px;
+  padding:30px;
+  flex-direction:column;
+  background:white;
+}
+
+.grid-icons {
+  height:100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.grid-labels {
+  padding-top:16px;
+  text-align:center;
+  color:#03A9F4; /* accent-color-1 */
+  font-size:14px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
 
 
 
@@ -133,6 +177,7 @@ header {
   align-items: center;
   justify-content: center;
   background: #1A237E;
+  z-index: 1;
   /* primary color */ }
 
 #header-bar-content {
@@ -483,17 +528,14 @@ footer p { font-size:12px; }
 
 [data-page-name="about-page"] #about-page-content h4 {
   margin:40px 0 30px 0;
-  text-align:center;
 }
 
 [data-page-name="about-page"] #about-page-content h5 {
   margin:0 0 40px 0;
-  text-align:center;
 }
 
 [data-page-name="about-page"] #follow-us h4 {
   margin:80px 0 40px 0;
-  text-align:center;
 }
 
 [data-page-name="about-page"] #team-picture {
@@ -504,6 +546,20 @@ footer p { font-size:12px; }
 
 [data-page-name="about-page"] #team-picture img {
   width:100%;
+}
+
+
+
+
+
+
+
+[data-page-name="control-panel-page"] h4 {
+  margin:40px 0 30px 0;
+}
+
+[data-page-name="control-panel-page"] #banner-picture {
+  background-image: url("../assets/images/panel_image.png");
 }
 
 /*
