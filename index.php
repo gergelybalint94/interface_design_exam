@@ -17,11 +17,11 @@
 			<section class="full-screen-covers" id="first-cover-picture"></section>
 
 			<section class="background-secondary" id="short-introduction">
-				<div class="content-max-width-narrow">
+				<div class="content-max-width-narrowest">
 
 					<h4><img src="assets/logos/logo_white.png" style="height:1.3em" alt="OriginKBH"> is a place hosting events to discover the technology scene in Copenhagen</h4>
 
-					<div class="buttons main-buttons links-inactive">About us</div>
+					<div class="buttons main-buttons links-active" data-href="about.php">About us</div>
 
 				</div>
 			</section>
@@ -91,12 +91,7 @@
 							</li>
 						</ul>
 
-						<ul id="social-media-icon-list">
-							<li class="social-media-icons" id="instagram"></li>
-							<li class="social-media-icons" id="facebook"></li>
-							<li class="social-media-icons" id="google-plus"></li>
-							<li class="social-media-icons" id="youtube"></li>
-						</ul>
+						<?php require_once('templates/social-media-icon-list.php'); ?>
 
 					</div>
 				</div>
@@ -105,6 +100,9 @@
 			<section class="full-screen-covers" id="bottom-map"></section>
 
 		</div>
+
+		<!-- FOOTER: -->
+		<?php require_once('templates/footer.php'); ?>
 
 		<!-- REGISTRATION POPUP: -->
 		<?php require_once('templates/registration.php'); ?>
