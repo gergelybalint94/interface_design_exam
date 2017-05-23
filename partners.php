@@ -21,15 +21,20 @@
 		
 
 		<!-- MAIN PAGE CONTENT: -->
-		<div class="page-contents" data-page-name="control-panel-page">
+		<div class="page-contents" data-page-name="partners-page">
 			<section class="banner-pictures" id="banner-picture"></section>
 
-			<section class="content-max-width-wide" id="control-page-content">
-				<h4>Control panel</h4>
-				<h5>Access each category's control settings</h5>
+			<section class="content-max-width-narrowest" id="partners-page-content">
+				<h4>We bring tech companies closer to the people</h4>
+				<p>ORIGIN KBH works with the worlds’ leading brands and startups to bring together a unique blend of experienced tech players and innovators. We are proud to announce the following partners for our events.</p>
 
-				<div class="grid-areas content-max-width-wide" id="partners-grids"></div>
+				<h4>Become our partner</h4>
+				<p>If you wish to become one of the partners or hold a presentation to our audience, contact us.</p>
+
+				<h4>ORIGIN KBH partners:</h4>
 			</section>
+
+			<section class="grid-areas content-max-width-wide" id="partners-grids"></section>
 		</div>
 
 
@@ -43,8 +48,14 @@
 		<!-- FOOTER: -->
 		<?php require_once('templates/footer.php'); ?>
 
+		<!-- LOGIN POPUP: -->
+		<?php require_once('templates/login.php'); ?>
+
 		<!-- REGISTRATION POPUP: -->
 		<?php require_once('templates/registration.php'); ?>
+
+		<!-- LOGOUT POPUP: -->
+		<?php require_once('templates/logout.php'); ?>
 
 
 		<!-- JQUERY LINKED IN BELOW: -->

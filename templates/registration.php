@@ -1,7 +1,7 @@
-<div id="registration-wrap">
-	<div id="registration-area" class="close-signup-onclick-elements">
+<div id="registration-wrap" class="close-these-popups">
+	<div id="registration-area" class="close-popup-onclick-elements">
 		<div id="signup-container">
-			<div id="close-signup-container" class="fa fa-times close-signup-onclick-elements"></div>
+			<div id="close-signup-container" class="fa fa-times close-popup-onclick-elements"></div>
 			<div class="signup-container-child">
 				<h1 class="fontWeight-medium">Sign up</h1>
 			</div>
