@@ -298,11 +298,11 @@ header {
   display: none; }
 
 #registration-area, #login-area {
+  z-index: 999;
   transition: 1s;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
   background: rgba(0, 0, 0, 0.75);
   width: 100vw;
   height: 100vh;
@@ -403,6 +403,56 @@ header {
 #open-registration:hover {
   cursor: pointer;
   color: #03A9F4; }
+
+/*DESIGNING THE LOG OUT BOX*/
+#logout-container {
+  display: none;
+  background: white;
+  width: 330px;
+  height: 160px;
+  z-index: 999;
+  position: absolute;
+  top: 65px;
+  right: 150px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px; }
+
+#logout-container div {
+  margin-top: 10px; }
+
+#account-name {
+  font-size: 15px;
+  font-weight: 500; }
+
+#account-email {
+  font-size: 13px; }
+
+#logout-account-btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+
+#my-account-btn, #log-out-btn {
+  background: grey;
+  margin: 10px; }
+
+#my-account-btn:hover, #log-out-btn:hover {
+  cursor: pointer; }
+
+#log-out-btn {
+  background: #35b7f3; }
+
+#close-log-out-container {
+  font-size: 20px;
+  color: gray;
+  position: absolute;
+  right: 10px;
+  top: 0px; }
+
+#close-log-out-container:hover {
+  cursor: pointer; }
 
 /* -- SOCIAL MEDIA ICONS: -- */
 #social-media-icon-list {
