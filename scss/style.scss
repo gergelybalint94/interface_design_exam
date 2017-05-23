@@ -301,12 +301,15 @@ header {
   height: 15px;
   background-image: url("../assets/icons/menu-cross.svg"); }
 
-/* -- REGISTRATION POPUP: -- */
-#registration-wrap {
+/* -- REGISTRATION AND LOGIN POPUPS -- */
+#registration-wrap, #login-wrap {
   display:none;
 }
+#login-wrap {
+	display:flex;
+}
 
-#registration-area {
+#registration-area, #login-area {
   transition: 1s;
   display: flex;
   justify-content: center;
@@ -320,7 +323,7 @@ header {
   top: 0;
   left: 0; }
 
-#signup-container {
+#signup-container, #login-container {
   position: relative;
   width: 600px;
   height: 450px;
@@ -330,20 +333,20 @@ header {
   border-radius: 3px;
   margin-top: 20px; }
 
-.signup-container-child {
+.signup-container-child, .login-container-child {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center; }
 
-.signup-container-child h1 {
+.signup-container-child h1, .login-container-child h1 {
   padding-top: 30px;
   font-size: 20px; }
 
-.signup-container-child:not(:first-child) {
+.signup-container-child:not(:first-child), .login-container-child:not(:first-child) {
   margin-top: 30px; }
 
-.signup-container-fields {
+.signup-container-fields, .login-container-fields {
   display: flex;
   flex-direction: column;
   max-width: 300px;
@@ -354,7 +357,7 @@ header {
   display: flex;
   flex-direction: row; }
 
-#signup-form input {
+#signup-form input, #login-form input {
   border: none;
   border-bottom: 1px solid gray;
   padding-left: 5px;
@@ -367,7 +370,7 @@ header {
   width: 105px !important;
   margin-right: 0px; }
 
-#submit-registration {
+#submit-registration, #submit-login {
   max-width: 40%;
   padding: 12px;
   margin-left: 30px;
@@ -380,10 +383,10 @@ header {
   text-transform: uppercase;
   text-align: center; }
 
-#submit-registration:hover {
+#submit-registration:hover, #submit-login {
   cursor: pointer; }
 
-#signup-facebook, #signup-google {
+#signup-facebook, #signup-google, #login-facebook, #login-google {
   width: 190px;
   height: 36px;
   background: #dd4b39;
@@ -392,19 +395,28 @@ header {
   text-align: center;
   font-size: 14px; }
 
-#signup-facebook {
+#signup-facebook, #login-facebook {
   margin-bottom: 36px;
   background: #3b5998; }
 
-#close-signup-container {
+#close-signup-container, #close-login-container {
   font-size: 20px;
   color: gray;
   position: absolute;
   right: 10px;
   top: 10px; }
 
-#close-signup-container:hover {
+#close-signup-container:hover, #close-login-container:hover {
   cursor: pointer; }
+
+#open-registration{
+	transition:0.25s;
+
+}
+#open-registration:hover{
+	cursor:pointer;
+	color: $accentColor1;
+}
 
 /* -- SOCIAL MEDIA ICONS: -- */
 #social-media-icon-list {

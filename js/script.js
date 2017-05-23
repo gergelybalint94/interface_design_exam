@@ -135,10 +135,14 @@ $(document).on('click', '.closer-elements', function(){
 	.fadeOut();
 });
 
-//Function for the popping up signup box
+//Function for the popping up login box
 $(document).on("click", "#account-icon", function(){
-	console.log("works");
-	$("#registration-wrap").fadeIn('fast');
+	$("#login-wrap").fadeIn('fast');
+});
+
+//Function to close the login container
+$(document).on("click", ".close-login-onclick-elements", function(){
+	$("#login-wrap").fadeOut('fast');
 });
 
 //Function to close the signup container
@@ -151,7 +155,11 @@ $(document).on('click', ".close-signup-onclick-elements *", function(e) {
 	e.stopPropagation();
 });
 
-
+//Open the registration popup
+$(document).on("click", "#open-registration", function(){
+	$("#login-wrap").fadeOut('fast');
+	$("#registration-wrap").show(); //with fadeIn it looks awkward
+});
 
 // Function to save a new user
 function createUser(firstName, lastName, password, email ){

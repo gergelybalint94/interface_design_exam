@@ -17,7 +17,7 @@
 						<input type="text" name="lastName" id="lastName" placeholder="Last Name">
 					</div>
 					<input type="email" name="email" id="email" placeholder="Email">
-					<input type="password" name="password" id="password" placeholder="password">
+					<input type="password" name="password" id="password" placeholder="Password">
 					<input type="password" name="password" id="password" placeholder="Repeat Password">
 					<div type="submit" id="submit-registration" name="submit-signup" class="fontWeight-medium">Sign up</div>
 				</div>
