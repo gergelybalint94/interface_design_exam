@@ -12,6 +12,14 @@
 		<!-- SIDEBAR: -->
 		<?php require_once('templates/sidebar.php'); ?>
 
+
+
+
+
+
+
+		
+
 		<!-- MAIN PAGE CONTENT: -->
 		<div class="page-contents" data-page-name="control-panel-page">
 			<section class="banner-pictures" id="banner-picture"></section>
@@ -23,6 +31,14 @@
 				<div class="grid-areas content-max-width-wide" id="control-panel-grids"></div>
 			</section>
 		</div>
+
+
+
+
+
+
+
+		
 
 		<!-- FOOTER: -->
 		<?php require_once('templates/footer.php'); ?>
