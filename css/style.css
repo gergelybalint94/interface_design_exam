@@ -127,23 +127,23 @@ section {
   flex-wrap: wrap; }
 
 .grids {
-  display:flex;
-  width:200px;
-  height:200px;
-  margin:40px;
-  padding:30px 5px;
-  flex-direction:column;
-  background:white;
-}
+  display: flex;
+  width: 200px;
+  height: 200px;
+  margin: 40px;
+  padding: 30px 5px;
+  flex-direction: column;
+  background: white; }
+
 .grids.highlighted {
-  background: #1A237E; /* primary color */
-}
+  background: #1A237E;
+  /* primary color */ }
+
 .grids .extra-lines {
   color: white;
   font-size: 14px;
   text-align: center;
-  text-transform: capitalize;
-}
+  text-transform: capitalize; }
 
 .grid-icons {
   height: 100%;
