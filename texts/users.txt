@@ -5,5 +5,19 @@
         "lastName": "balint",
         "password": "2",
         "email": "2"
+    },
+    {
+        "sUniqueId": 10002,
+        "firstName": "",
+        "lastName": "",
+        "password": "",
+        "email": ""
+    },
+    {
+        "sUniqueId": 10003,
+        "firstName": "",
+        "lastName": "",
+        "password": "",
+        "email": ""
     }
 ]

@@ -207,6 +207,10 @@ $(document).on("ready", function(){
 	}else{
 		console.log("logged in");
 		loggedIn = true;
+		var name = localStorage.getItem("name");
+		var email = localStorage.getItem("email");
+		$("#account-name").append(name);
+		$("#account-email").append(email);
 	}
 });
 
@@ -248,9 +252,19 @@ $(document).on('click', '.closer-elements', function(){
 	.fadeOut();
 });
 
-//Function for the popping up login box
+//Function for the popping up login box or the account manual
 $(document).on("click", "#account-icon", function(){
-	$("#login-wrap").fadeIn('fast');
+	if(loggedIn===true){
+		$("#logout-container").fadeIn("fast");
+		$("#logout-container").css("display","flex");
+	}else{
+		$("#login-wrap").fadeIn('fast');
+	}
+});
+
+//Function to close the logout container
+$(document).on("click", "#close-log-out-container", function(){
+	$("#logout-container").fadeOut('fast');
 });
 
 //Function to close the login container
@@ -291,7 +305,8 @@ function createUser(firstName, lastName, password, email ){
 			"email"		: sEmail
 		},
 	}).done(function(sData){
-		$("#registration-wrap").fadeOut();
+		$("#registration-wrap").fadeOut("fast");
+		$("#login-wrap").show();
 });
 };
 
@@ -320,9 +335,17 @@ $("#submit-login").on("click",function(){
 			localStorage.setItem("email",email);
 			localStorage.setItem("name",name);
 			$("#login-wrap").fadeOut("fast");
-			loggedIn=true;
+		    location.reload();
 		}else{
 			alert("Invalid email or password, please try again");
 		};
 	});
+});
+
+//function for logging out
+$(document).on("click", "#log-out-btn", function(){
+	loggedIn=false;
+	localStorage.clear();
+	$("#logout-container").fadeOut("fast");
+	location.reload();
 });
