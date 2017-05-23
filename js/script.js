@@ -30,13 +30,13 @@ switch( sActualPage ){
 			},
 			{
 				'label'		: 'manage event list',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'edit_event.svg',
 				'active'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'add new partner',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'add_partner.svg',
 				'active'	: false,
 				'href'		: ''
 			},
@@ -48,25 +48,25 @@ switch( sActualPage ){
 			},
 			{
 				'label'		: 'manage user list',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'edit_users.svg',
 				'active'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'add new website admin',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'add_admin.svg',
 				'active'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'edit site contents',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'edit_content.svg',
 				'active'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'general site settings',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'settings-work-tool.svg',
 				'active'	: false,
 				'href'		: ''
 			}
