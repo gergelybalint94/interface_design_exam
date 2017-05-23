@@ -25,6 +25,15 @@ $(document).on('click', '[data-href]', function(){
 // FUNCTIONS:
 // ██████████████████████████████
 
+// Function to populate grid areas:
+function fnPopulateGridArea( sGridAreaId, ajGridData ){
+	var sBluePrint = 
+		'<div class="grids links-active" data-href="{{href}}">' +
+			'<div class="grid-icons" style="background-image: url('assets/icons/add_event.svg');"></div>' +
+			'<div class="grid-labels">{{label}}</div>' +
+		'</div>';
+}
+
 // Function to open sidebar menu:
 $(document).on('click', '#sandwich-icon', function(){
 	$('#side-bar')
