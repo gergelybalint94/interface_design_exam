@@ -138,10 +138,20 @@ section {
   width:200px;
   height:200px;
   margin:40px;
-  padding:30px;
+  padding:30px 5px;
   flex-direction:column;
   background:white;
 }
+.grids.highlighted {
+  background: $primaryColor; /* primary color */
+}
+.grids .extra-lines {
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
 
 .grid-icons {
   height:100%;
