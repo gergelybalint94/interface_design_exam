@@ -135,7 +135,7 @@ section {
   display:flex;
   width:200px;
   height:200px;
-  margin:30px;
+  margin:40px;
   padding:30px;
   flex-direction:column;
   background:white;
@@ -556,6 +556,10 @@ footer p { font-size:12px; }
 
 [data-page-name="control-panel-page"] h4 {
   margin:40px 0 30px 0;
+}
+
+[data-page-name="control-panel-page"] h5 {
+  margin-bottom:10px;
 }
 
 [data-page-name="control-panel-page"] #banner-picture {
