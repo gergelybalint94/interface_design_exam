@@ -1,7 +1,7 @@
-<div id="login-wrap">
-	<div id="login-area" class="close-login-onclick-elements">
+<div id="login-wrap" class="close-these-popups">
+	<div id="login-area" class="close-popup-onclick-elements">
 		<div id="login-container">
-			<div id="close-login-container" class="fa fa-times close-login-onclick-elements"></div>
+			<div id="close-login-container" class="fa fa-times close-popup-onclick-elements"></div>
 			<div class="login-container-child">
 				<h1 class="fontWeight-medium">Log in</h1>
 			</div>

@@ -1,5 +1,5 @@
-<div id="logout-container">
-	<div id="close-log-out-container" class="fa fa-times"></div>
+<div id="logout-container" class="close-these-popups">
+	<div id="close-log-out-container" class="fa fa-times close-popup-onclick-elements"></div>
 	<div id="account-name"></div>
 	<div id="account-email"></div>
 	<div id="logout-account-btn-container">

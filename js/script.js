@@ -25,56 +25,56 @@ switch( sActualPage ){
 		var ajGridData = [
 			{
 				'label'		: 'add new event',
-				'icon'		: 'add_event.svg',
+				'icon'		: 'icons/add_event.svg',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'manage event list',
-				'icon'		: 'edit_event.svg',
+				'icon'		: 'icons/edit_event.svg',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'add new partner',
-				'icon'		: 'add_partner.svg',
+				'icon'		: 'icons/add_partner.svg',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'manage partner list',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'icons/edit_partners.svg',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'manage user list',
-				'icon'		: 'edit_users.svg',
+				'icon'		: 'icons/edit_users.svg',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'add new website admin',
-				'icon'		: 'add_admin.svg',
+				'icon'		: 'icons/add_admin.svg',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'edit site contents',
-				'icon'		: 'edit_content.svg',
+				'icon'		: 'icons/edit_content.svg',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'general site settings',
-				'icon'		: 'settings-work-tool.svg',
+				'icon'		: 'icons/settings-work-tool.svg',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
@@ -87,86 +87,86 @@ switch( sActualPage ){
 		var ajGridData = [
 			{
 				'label'		: 'ibm',
-				'icon'		: 'add_event.svg',
+				'icon'		: 'logos/ibm_logo.png',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'danske bank',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'logos/danske_bank_logo.png',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'google',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'logos/google.png',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'microsoft',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'logos/Microsoft-Logo-PNG.png',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'magnetix',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'logos/Partner_DK_logo_46.png',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'peytz&co',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'logos/peytz.png',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'ideo',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'logos/IDEO_logo_2.png',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'danskbiotek',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'logos/logo-big.png',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'novo nordisk',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'logos/Novo_Nordisk.svg.png',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'blue ocean robotics',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'logos/robotics2.png',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'transfer wise',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'logos/Transferwise_logo.png',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'contact us',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'icons/menu-partners.svg',
 				'active'	: false,
-				'highlight'	: true,
+				'highlight'	: false,
 				'extraLine'	: 'become our new partner',
 				'href'		: ''
 			}
@@ -218,7 +218,7 @@ $(document).on("ready", function(){
 function fnPopulateGridArea( sGridAreaSelector, ajGridData ){
 	var sBluePrint = 
 		'<div class="grids {{is-active}} {{is-highlighted}}" data-href="{{href}}">' +
-			'<div class="grid-icons" style="background-image: url(&quot;assets/icons/{{icon}}&quot;);"></div>' +
+			'<div class="grid-icons" style="background-image: url(&quot;assets/{{icon}}&quot;);"></div>' +
 			'{{is-extra-line}}' +
 			'<div class="grid-labels">{{label}}</div>' +
 		'</div>';
@@ -262,23 +262,13 @@ $(document).on("click", "#account-icon", function(){
 	}
 });
 
-//Function to close the logout container
-$(document).on("click", "#close-log-out-container", function(){
-	$("#logout-container").fadeOut('fast');
-});
-
 //Function to close the login container
-$(document).on("click", "#close-login-container", function(){
-	$("#login-wrap").fadeOut('fast');
-});
-
-//Function to close the signup container
-$(document).on("click", ".close-signup-onclick-elements", function(){
-	$("#registration-wrap").fadeOut('fast');
+$(document).on("click", ".close-popup-onclick-elements", function(){
+	$(".close-these-popups").fadeOut('fast');
 });
 
 // Ignore click if it happens on a child element:
-$(document).on('click', ".close-signup-onclick-elements *", function(e) {
+$(document).on('click', ".close-popup-onclick-elements *", function(e) {
 	e.stopPropagation();
 });
 
