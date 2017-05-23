@@ -42,7 +42,7 @@ html, body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  background:#EFEFEF; }
+  background: #EFEFEF; }
 
 h4 {
   font-weight: 400;
@@ -51,8 +51,7 @@ h4 {
   text-align: center; }
 
 h5 {
-  text-align:center;
-}
+  text-align: center; }
 
 p {
   padding: 0 1em; }
@@ -66,8 +65,7 @@ input {
   border: 1px solid gray; }
 
 section {
-  width:100%;
-}
+  width: 100%; }
 
 /* -- GENERAL PAGE RULES: -- */
 .content-max-width-narrowest {
@@ -115,56 +113,43 @@ section {
   background: #03A9F4;
   /* accent-color-1 */ }
 
-
 .banner-pictures {
-  width:100%;
-  height:195px;
-  background-color:lightgray;
+  width: 100%;
+  height: 195px;
+  background-color: lightgray;
   background-size: cover;
-  background-position: center;
-}
+  background-position: center; }
 
 .grid-areas {
-  display:flex;
-  width:100%;
-  justify-content:center;
-  flex-wrap: wrap;
-}
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap; }
 
 .grids {
-  display:flex;
-  width:200px;
-  height:200px;
-  margin:40px;
-  padding:30px;
-  flex-direction:column;
-  background:white;
-}
+  display: flex;
+  width: 200px;
+  height: 200px;
+  margin: 40px;
+  padding: 30px;
+  flex-direction: column;
+  background: white; }
 
 .grid-icons {
-  height:100%;
+  height: 100%;
   background-size: contain;
   background-position: center;
-  background-repeat: no-repeat;
-}
+  background-repeat: no-repeat; }
 
 .grid-labels {
-  padding-top:16px;
-  text-align:center;
-  color:#03A9F4; /* accent-color-1 */
-  font-size:14px;
+  padding-top: 16px;
+  text-align: center;
+  color: #03A9F4;
+  /* accent-color-1 */
+  font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
-}
-
-
-
-
-
-
-
-
-
+  min-height: 50px; }
 
 /* -- HEADER BAR: -- */
 header {
@@ -300,8 +285,7 @@ header {
 
 /* -- REGISTRATION POPUP: -- */
 #registration-wrap {
-  display:none;
-}
+  display: none; }
 
 #registration-area {
   transition: 1s;
@@ -416,9 +400,11 @@ header {
   height: 35px;
   background-size: contain;
   background-position: center;
-  opacity:0.7;
-  transition:0.25s; }
-.social-media-icons:hover { opacity:1; }
+  opacity: 0.7;
+  transition: 0.25s; }
+
+.social-media-icons:hover {
+  opacity: 1; }
 
 #social-media-icon-list #instagram {
   background-image: url("../assets/icons/instagram-logo.svg"); }
@@ -434,15 +420,16 @@ header {
 
 /* -- FOOTER: -- */
 footer {
-  display:flex;
-  height:80px;
-  margin-top:80px;
-  align-items:center;
-  justify-content:center;
-  border-top:1px solid lightgray;
-  text-transform:uppercase;
-}
-footer p { font-size:12px; }
+  display: flex;
+  height: 80px;
+  margin-top: 80px;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid lightgray;
+  text-transform: uppercase; }
+
+footer p {
+  font-size: 12px; }
 
 /* -- UNIQUE PAGE RULES: -- */
 [data-page-name="index-page"] #first-cover-picture {
@@ -511,60 +498,37 @@ footer p { font-size:12px; }
 [data-page-name="index-page"] #bottom-map {
   background-image: url("../assets/images/map_bottom.png"); }
 
-
-
-
-
-
-
-
 [data-page-name="about-page"] section {
-  margin:auto;
-}
+  margin: auto; }
 
 [data-page-name="about-page"] #banner-picture {
-  background-image: url("../assets/images/about_photo.png");
-}
+  background-image: url("../assets/images/about_photo.png"); }
 
 [data-page-name="about-page"] #about-page-content h4 {
-  margin:40px 0 30px 0;
-}
+  margin: 40px 0 30px 0; }
 
 [data-page-name="about-page"] #about-page-content h5 {
-  margin:0 0 40px 0;
-}
+  margin: 0 0 40px 0; }
 
 [data-page-name="about-page"] #follow-us h4 {
-  margin:80px 0 40px 0;
-}
+  margin: 80px 0 40px 0; }
 
 [data-page-name="about-page"] #team-picture {
-  width:100%;
-  margin-top:40px;
-  padding:0 1em;
-}
+  width: 100%;
+  margin-top: 40px;
+  padding: 0 1em; }
 
 [data-page-name="about-page"] #team-picture img {
-  width:100%;
-}
-
-
-
-
-
-
+  width: 100%; }
 
 [data-page-name="control-panel-page"] h4 {
-  margin:40px 0 30px 0;
-}
+  margin: 40px 0 30px 0; }
 
 [data-page-name="control-panel-page"] h5 {
-  margin-bottom:10px;
-}
+  margin-bottom: 10px; }
 
 [data-page-name="control-panel-page"] #banner-picture {
-  background-image: url("../assets/images/panel_image.png");
-}
+  background-image: url("../assets/images/panel_image.png"); }
 
 /*
 	--------------------------
