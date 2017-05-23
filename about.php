@@ -14,7 +14,7 @@
 
 		<!-- MAIN PAGE CONTENT: -->
 		<div class="page-contents" data-page-name="about-page">
-			<section id="banner-picture"></section>
+			<section class="banner-pictures" id="banner-picture"></section>
 
 			<section class="content-max-width-narrowest" id="about-page-content">
 				<h4>About us</h4>
