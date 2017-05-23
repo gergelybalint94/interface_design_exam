@@ -2,6 +2,7 @@
 // ██████████████████████████████
 
 var sActualPage	= ( document.location.href.match(/[^\/]+$/) !== null ) ? document.location.href.match(/[^\/]+$/)[0] : 'index.php';
+var loggedIn = false;
 
 
 
@@ -31,14 +32,14 @@ switch( sActualPage ){
 			},
 			{
 				'label'		: 'manage event list',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'edit_event.svg',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'add new partner',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'add_partner.svg',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
@@ -52,28 +53,28 @@ switch( sActualPage ){
 			},
 			{
 				'label'		: 'manage user list',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'edit_users.svg',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'add new website admin',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'add_admin.svg',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'edit site contents',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'edit_content.svg',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
 			},
 			{
 				'label'		: 'general site settings',
-				'icon'		: 'edit_partners.svg',
+				'icon'		: 'settings-work-tool.svg',
 				'active'	: false,
 				'highlight'	: false,
 				'href'		: ''
@@ -199,6 +200,16 @@ $(document).on('click', '[data-href]', function(){
 // FUNCTIONS:
 // ██████████████████████████████
 
+//Self calling function to check if someone is logged in or not
+$(document).on("ready", function(){
+	if(localStorage.getItem("name")===null){
+		console.log("not logged in");
+	}else{
+		console.log("logged in");
+		loggedIn = true;
+	}
+});
+
 // Function to populate grid areas:
 function fnPopulateGridArea( sGridAreaSelector, ajGridData ){
 	var sBluePrint = 
@@ -237,10 +248,14 @@ $(document).on('click', '.closer-elements', function(){
 	.fadeOut();
 });
 
-//Function for the popping up signup box
+//Function for the popping up login box
 $(document).on("click", "#account-icon", function(){
-	console.log("works");
-	$("#registration-wrap").fadeIn('fast');
+	$("#login-wrap").fadeIn('fast');
+});
+
+//Function to close the login container
+$(document).on("click", "#close-login-container", function(){
+	$("#login-wrap").fadeOut('fast');
 });
 
 //Function to close the signup container
@@ -253,7 +268,11 @@ $(document).on('click', ".close-signup-onclick-elements *", function(e) {
 	e.stopPropagation();
 });
 
-
+//Open the registration popup
+$(document).on("click", "#open-registration", function(){
+	$("#login-wrap").fadeOut('fast');
+	$("#registration-wrap").show(); //with fadeIn it looks awkward
+});
 
 // Function to save a new user
 function createUser(firstName, lastName, password, email ){
@@ -283,4 +302,27 @@ $("#submit-registration").on("click",function(){
 	var sPassword = $("#password").val();
 	var sEmail = $("#email").val();
 	createUser(sFirstName, sLastName, sPassword, sEmail);
+});
+
+//Function for logging in
+$("#submit-login").on("click",function(){
+	var sEmail = $("#login-email").val();
+	var sPassword = $("#login-password").val();
+	$.ajax({
+		"method":"POST",
+		"url":"api/api-log-in.php",
+		"data":{"email":sEmail,"password":sPassword},
+	}).done(function(sData){
+		if(sData){
+			var obj = $.parseJSON(sData);
+			var email = obj.email;
+			var name = obj.name;
+			localStorage.setItem("email",email);
+			localStorage.setItem("name",name);
+			$("#login-wrap").fadeOut("fast");
+			loggedIn=true;
+		}else{
+			alert("Invalid email or password, please try again");
+		};
+	});
 });
