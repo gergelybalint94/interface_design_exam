@@ -46,7 +46,12 @@ html, body {
 h4 {
   font-weight: 400;
   font-size: 30px;
-  padding: 0 1em; }
+  padding: 0 1em;
+  text-align: center; }
+
+h5 {
+  text-align:center;
+}
 
 p {
   padding: 0 1em; }
@@ -58,6 +63,10 @@ input {
   font-size: 14px;
   border-radius: 2px;
   border: 1px solid gray; }
+
+section {
+  width:100%;
+}
 
 /* -- GENERAL PAGE RULES: -- */
 .content-max-width-narrowest {
@@ -77,7 +86,8 @@ input {
   width: 100%;
   padding-top: 84px;
   /* 1px smaller than header's height */
-  flex-direction: column; }
+  flex-direction: column;
+  align-items: center; }
 
 .full-screen-covers {
   height: 100vh;
@@ -133,6 +143,7 @@ header {
   align-items: center;
   justify-content: center;
   background: #1A237E;
+  z-index: 1;
   /* primary color */ }
 
 #header-bar-content {
@@ -483,17 +494,14 @@ footer p { font-size:12px; }
 
 [data-page-name="about-page"] #about-page-content h4 {
   margin:40px 0 30px 0;
-  text-align:center;
 }
 
 [data-page-name="about-page"] #about-page-content h5 {
   margin:0 0 40px 0;
-  text-align:center;
 }
 
 [data-page-name="about-page"] #follow-us h4 {
   margin:80px 0 40px 0;
-  text-align:center;
 }
 
 [data-page-name="about-page"] #team-picture {
