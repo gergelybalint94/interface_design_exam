@@ -16,12 +16,11 @@
 		<div class="page-contents" data-page-name="control-panel-page">
 			<section class="banner-pictures" id="banner-picture"></section>
 
-			<section class="content-max-width-wide" id="about-page-content">
+			<section class="content-max-width-wide" id="control-page-content">
 				<h4>Control panel</h4>
-				<h5>Here you can modify and edit your settings.</h5>
-			</section>
+				<h5>Access each category's control settings</h5>
 
-			<section class="grid-areas content-max-width-wide" id="control-panel-grids">
+				<div class="grid-areas content-max-width-wide" id="control-panel-grids"></div>
 			</section>
 		</div>
 
