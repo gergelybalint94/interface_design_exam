@@ -2,7 +2,7 @@
 // ██████████████████████████████
 
 var sActualPage	= ( document.location.href.match(/[^\/]+$/) !== null ) ? document.location.href.match(/[^\/]+$/)[0] : 'index.php';
-var loggedIn = false;
+var bLoggedIn = false;
 
 
 
@@ -201,7 +201,7 @@ $(document).on("ready", function(){
 		console.log("not logged in");
 	}else{
 		console.log("logged in");
-		loggedIn = true;
+		bLoggedIn = true;
 		var name = localStorage.getItem("name");
 		var email = localStorage.getItem("email");
 		$("#account-name").append(name);
@@ -293,7 +293,7 @@ $(document).on('click', '.closer-elements', function(){
 
 //Function for the popping up login box or the account manual
 $(document).on("click", "#account-icon", function(){
-	if(loggedIn===true){
+	if(bLoggedIn===true){
 		$("#logout-container").fadeIn("fast");
 		$("#logout-container").css("display","flex");
 	}else{
@@ -373,7 +373,7 @@ $("#submit-login").on("click",function(){
 
 //function for logging out
 $(document).on("click", "#log-out-btn", function(){
-	loggedIn=false;
+	bLoggedIn=false;
 	localStorage.clear();
 	$("#logout-container").fadeOut("fast");
 	location.reload();
