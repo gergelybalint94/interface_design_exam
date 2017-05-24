@@ -8,18 +8,28 @@
 
 		<!-- HEADER (POSITION:FIXED): -->
 		<?php require_once('templates/header.php'); ?>
+
+		<!-- SIDEBAR: -->
 		<?php require_once('templates/sidebar.php'); ?>
+
+
+
+
+
+
+
+		
 
 		<!-- MAIN PAGE CONTENT: -->
 		<div class="page-contents" data-page-name="index-page">
 			<section class="full-screen-covers" id="first-cover-picture"></section>
 
 			<section class="background-secondary" id="short-introduction">
-				<div class="content-max-width-narrow">
+				<div class="content-max-width-narrowest">
 
 					<h4><img src="assets/logos/logo_white.png" style="height:1.3em" alt="OriginKBH"> is a place hosting events to discover the technology scene in Copenhagen</h4>
 
-					<div class="buttons main-buttons links-inactive">About us</div>
+					<div class="buttons main-buttons links-active" data-href="about.php">About us</div>
 
 				</div>
 			</section>
@@ -50,7 +60,7 @@
 
 						<form>
 							<input type="text" name="email" placeholder="Your email">
-							<div class="buttons main-buttons">Submit</div>
+							<div class="buttons main-buttons links-inactive">Submit</div>
 						</form>
 
 					</div>
@@ -89,12 +99,7 @@
 							</li>
 						</ul>
 
-						<ul id="social-media-icon-list">
-							<li class="social-media-icons" id="instagram"></li>
-							<li class="social-media-icons" id="facebook"></li>
-							<li class="social-media-icons" id="google-plus"></li>
-							<li class="social-media-icons" id="youtube"></li>
-						</ul>
+						<?php require_once('templates/social-media-icon-list.php'); ?>
 
 					</div>
 				</div>
@@ -103,32 +108,26 @@
 			<section class="full-screen-covers" id="bottom-map"></section>
 
 		</div>
-		<div id="registration-area" data-page-name="registration-page">
-			<div id="signup-container">
-				<div id="close-signup-container" class="fa fa-times"></div>
-				<div class="signup-container-child">
-					<h1 class="fontWeight-medium">Sign up</h1>
-				</div>
-				<div class="signup-container-child">
-					<div class="signup-container-fields">
-						<div id="signup-facebook"><div class="fa fa-facebook"></div> Signup with Facebook</div>
-						<div id="signup-google"><div class="fa fa-google"></div> Signup with Google+</div>
-					</div>
-					<form class="forms" id="signup-form" method="post">
-					<div class="signup-container-fields">
-						<div id="signup-names">
-							<input type="text" name="firstName" id="firstName" placeholder="First Name">
-							<input type="text" name="lastName" id="lastName" placeholder="Last Name">
-						</div>
-						<input type="email" name="email" id="email" placeholder="Email">
-						<input type="password" name="password" id="password" placeholder="password">
-						<input type="password" name="password" id="password" placeholder="Repeat Password">
-						<div type="submit" id="submit-registration" name="submit-signup" class="fontWeight-medium">Sign up</div>
-					</div>
-					</form>
-				</div>
-			</div>
-		</div>
+
+
+
+
+
+
+
+		
+
+		<!-- FOOTER: -->
+		<?php require_once('templates/footer.php'); ?>
+
+		<!-- LOGIN POPUP: -->
+		<?php require_once('templates/login.php'); ?>
+
+		<!-- REGISTRATION POPUP: -->
+		<?php require_once('templates/registration.php'); ?>
+
+		<!-- LOGOUT POPUP: -->
+		<?php require_once('templates/logout.php'); ?>
 
 
 		<!-- JQUERY LINKED IN BELOW: -->
