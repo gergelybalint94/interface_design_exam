@@ -40,39 +40,43 @@
 
 			<section class="content-max-width-narrow" id="event-list">
 
-				<div class="event-list-items">
-					<div class="event-titles fontWeight-medium">MICROSOFT Hackathon: Machine Learning for the Search for
-Extraterrestrial Intelligence</div>
-					<div class="event-date-place-wraps">
-						<div class="event-dates">May 26, 2017</div>
-						<div class="event-places">Origin KBH</div>
+				<div class="event-list-item-wraps background-pictures" style="background-image:url('../assets/images/awards.png');">
+					<div class="event-list-items">
+						<div class="event-titles fontWeight-medium">MICROSOFT Hackathon: Machine Learning for the Search for Extraterrestrial Intelligence</div>
+						<div class="event-date-place-wraps">
+							<div class="event-dates">May 26, 2017</div>
+							<div class="event-places">Origin KBH</div>
+						</div>
 					</div>
 				</div>
 
-				<div class="event-list-items">
-					<div class="event-titles fontWeight-medium">MICROSOFT Hackathon: Machine Learning for the Search for
-Extraterrestrial Intelligence</div>
-					<div class="event-date-place-wraps">
-						<div class="event-dates">May 26, 2017</div>
-						<div class="event-places">Origin KBH</div>
+				<div class="event-list-item-wraps background-pictures" style="background-image:url('../assets/images/partners_photo.png');">
+					<div class="event-list-items">
+						<div class="event-titles fontWeight-medium">BLUE OCEAN ROBOTICS presents: Meet the scientist. Robotics.</div>
+						<div class="event-date-place-wraps">
+							<div class="event-dates">May 31, 2017</div>
+							<div class="event-places">Origin KBH</div>
+						</div>
 					</div>
 				</div>
 
-				<div class="event-list-items">
-					<div class="event-titles fontWeight-medium">MICROSOFT Hackathon: Machine Learning for the Search for
-Extraterrestrial Intelligence</div>
-					<div class="event-date-place-wraps">
-						<div class="event-dates">May 26, 2017</div>
-						<div class="event-places">Origin KBH</div>
+				<div class="event-list-item-wraps background-pictures" style="background-image:url('../assets/images/partners_photo.png');">
+					<div class="event-list-items">
+						<div class="event-titles fontWeight-medium">Exploring the New Horizons of Nano Biotech</div>
+						<div class="event-date-place-wraps">
+							<div class="event-dates">June 16, 2017</div>
+							<div class="event-places">Origin KBH</div>
+						</div>
 					</div>
 				</div>
 
-				<div class="event-list-items">
-					<div class="event-titles fontWeight-medium">MICROSOFT Hackathon: Machine Learning for the Search for
-Extraterrestrial Intelligence</div>
-					<div class="event-date-place-wraps">
-						<div class="event-dates">May 26, 2017</div>
-						<div class="event-places">Origin KBH</div>
+				<div class="event-list-item-wraps background-pictures" style="background-image:url('../assets/images/partners_photo.png');">
+					<div class="event-list-items">
+						<div class="event-titles fontWeight-medium">Tech Geek Awards 2017</div>
+						<div class="event-date-place-wraps">
+							<div class="event-dates">September 11, 2017</div>
+							<div class="event-places">Origin KBH</div>
+						</div>
 					</div>
 				</div>
 
