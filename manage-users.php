@@ -28,53 +28,16 @@
 				<h4>Manage user list</h4>
 
 				<div id="user-list">
+
+					<!-- Header row: -->
 					<div class="tr">
-						<div class="td fontWeight-medium checkmark-cells">Site admin</div>
+						<div class="td fontWeight-medium checkmark-cells fa fa-key fw"></div>
 						<div class="td fontWeight-medium">Name</div>
 						<div class="td fontWeight-medium">Surname</div>
 						<div class="td fontWeight-medium">Email</div>
 						<div class="td fontWeight-medium row-button-wraps"></div>
 					</div>
-					<div class="tr">
-						<div class="td checkmark-cells">S</div>
-						<div class="td">Name</div>
-						<div class="td">Surnamsdfe</div>
-						<div class="td">name@gmail.com</div>
-						<div class="td row-button-wraps">
-							<div class="buttons main-buttons">Edit</div>
-							<div class="buttons warning-buttons">Delete</div>
-						</div>
-					</div>
-					<div class="tr">
-						<div class="td checkmark-cells">S</div>
-						<div class="td">Namsdfsdfe</div>
-						<div class="td">Surname</div>
-						<div class="td">name@gmail.com</div>
-						<div class="td row-button-wraps">
-							<div class="buttons main-buttons">Edit</div>
-							<div class="buttons warning-buttons">Delete</div>
-						</div>
-					</div>
-					<div class="tr">
-						<div class="td checkmark-cells">S</div>
-						<div class="td">Name</div>
-						<div class="td">Surname</div>
-						<div class="td">namsdfe@gmail.com</div>
-						<div class="td row-button-wraps">
-							<div class="buttons main-buttons">Edit</div>
-							<div class="buttons warning-buttons">Delete</div>
-						</div>
-					</div>
-					<div class="tr">
-						<div class="td checkmark-cells">S</div>
-						<div class="td">Name</div>
-						<div class="td">Surname</div>
-						<div class="td">name@gmail.com</div>
-						<div class="td row-button-wraps">
-							<div class="buttons main-buttons">Edit</div>
-							<div class="buttons warning-buttons">Delete</div>
-						</div>
-					</div>
+					
 				</div>
 			</section>
 		</div>
