@@ -3,7 +3,7 @@
 	<div id="account-name"></div>
 	<div id="account-email"></div>
 	<div id="logout-account-btn-container">
-		<div class="buttons" class="links-inactive" id="my-account-btn">My account</div>
+		<div class="buttons links-active" data-href="my-account.php" id="my-account-btn">My account</div>
 		<div class="buttons" class="links-active" id="log-out-btn">Log out</div>
 	</div>
 	
