@@ -21,6 +21,7 @@ for( $i = 0; $i < count($ajUsers) ; $i++ ){
 	};
 };
 
+
 $sajUsers = json_encode( $ajUsers , JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE );
 
 file_put_contents( $sFileName , $sajUsers );
