@@ -1,12 +1,5 @@
 [
     {
-        "sUniqueId": 10001,
-        "firstName": "balint",
-        "lastName": "gergely",
-        "password": "2",
-        "email": "gergelybalint94@gmail.com"
-    },
-    {
         "sUniqueId": 10002,
         "firstName": "",
         "lastName": "",
@@ -34,5 +27,13 @@
         "password": "333",
         "email": "tikameggy",
         "admin": "false"
+    },
+    {
+        "sUniqueId": 10006,
+        "firstName": "1",
+        "lastName": "1",
+        "password": "1",
+        "email": "1",
+        "admin": false
     }
 ]
