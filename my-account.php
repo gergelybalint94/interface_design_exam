@@ -48,7 +48,7 @@
 					<div>
 						<div class="account-label">Password</div>	
 						<div><input type="text" name="account-password" class="account-info-inputs" id="account-password-input" placeholder="password"></div>	
-						<div id="change-password">Change password</div>
+						<div id="change-password" class="links-inactive">Change password</div>
 					</div>
 
 					<div id="account-save-container">

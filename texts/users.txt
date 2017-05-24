@@ -41,6 +41,7 @@
         "lastName": "Bagdonaite",
         "password": "eidvile",
         "email": "eidvile.bagdonaite@gmail.com",
-        "admin": false
+
+        
     }
 ]
