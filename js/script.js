@@ -425,8 +425,10 @@ $("#submit-login").on("click",function(){
 			var obj = $.parseJSON(sData);
 			var email = obj.email;
 			var name = obj.name;
+			var sUniqueId = obj.sUniqueId;
 			localStorage.setItem("email",email);
 			localStorage.setItem("name",name);
+			localStorage.setItem("sUniqueId",sUniqueId);
 			$("#login-wrap").fadeOut("fast");
 		    location.reload();
 		}else{
@@ -441,4 +443,48 @@ $(document).on("click", "#log-out-btn", function(){
 	localStorage.clear();
 	$("#logout-container").fadeOut("fast");
 	location.reload();
+});
+
+
+if (sActualPage=="my-account.php") {
+
+	var sUniqueId = localStorage.getItem("sUniqueId");
+	$.ajax({
+		"method":"POST",
+		"url":"api/api-read-users.php",
+		"data":{"sUniqueId":sUniqueId},
+	}).done(function(sData){
+		if(sData){
+			var obj = $.parseJSON(sData);
+			var email = obj.email;
+			var firstName = obj.firstName;
+			var lastName = obj.lastName;
+			//fetching and writing the data from the txt file to the input fields
+			$("#account-name-input").val(firstName);
+			$("#account-surname-input").val(lastName);
+			$("#account-email-input").val(email);
+		};
+	});
+};
+
+
+
+//update users
+$(document).on("click", "#account-save-changes-btn", function(){
+	var newFirstName = $("#account-name-input").val();
+	var newLastName = $("#account-surname-input").val();
+	var newEmail = $("#account-email-input").val();
+	var sUniqueId = localStorage.getItem("sUniqueId");
+	$.ajax({
+		"method":"POST",
+		"url":"api/api-edit-user.php",
+		"data"		: {
+			"firstName"	: newFirstName,
+			"lastName"	: newLastName,
+			"sUniqueId"	: sUniqueId,
+			"email"		: newEmail
+		},
+	}).done(function(sData){
+		console.log(sData);
+	});	
 });
