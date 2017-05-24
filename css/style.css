@@ -700,7 +700,8 @@ footer p {
   width: 8%; }
 
 [data-page-name="manage-users-page"] .row-button-wraps {
-  width: 32%; }
+  width: 32%;
+  min-width: 225px; }
 
 [data-page-name="about-page"] section {
   margin: auto; }
