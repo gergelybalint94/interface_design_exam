@@ -161,8 +161,10 @@ switch( sActualPage ){
 				'active'	: true
 			},
 			{
+
 				'label'		: 'site analytics',
 				'icon'		: 'assets/icons/analytics.svg'
+
 			},
 			{
 				'label'		: 'edit site contents',
@@ -484,7 +486,30 @@ $(document).on("click", "#account-save-changes-btn", function(){
 			"sUniqueId"	: sUniqueId,
 			"email"		: newEmail
 		},
-	}).done(function(sData){
-		console.log(sData);
 	});	
+});
+
+//delete users call
+$(document).on("click", "#account-delete-account-btn", function(){
+	var sUniqueId = localStorage.getItem("sUniqueId");
+	fnDeleteUser(sUniqueId);
+	});
+
+//function for deleting users
+
+function fnDeleteUser(userId){
+	$.ajax({
+		"method":"POST",
+		"url":"api/api-delete-user.php",
+		"data"		: {
+			"sUniqueId"	: sUniqueId
+		},
+	});	
+};
+
+swal({
+  title: "Error!",
+  text: "Here's my error message!",
+  type: "error",
+  confirmButtonText: "Cool"
 });
