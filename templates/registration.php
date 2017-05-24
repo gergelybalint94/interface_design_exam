@@ -7,8 +7,8 @@
 			</div>
 			<div class="signup-container-child">
 				<div class="signup-container-fields">
-					<div id="signup-facebook"><div class="fa fa-facebook"></div> Signup with Facebook</div>
-					<div id="signup-google"><div class="fa fa-google"></div> Signup with Google+</div>
+					<div class="links-inactive" id="signup-facebook"><div class="fa fa-facebook"></div> Signup with Facebook</div>
+					<div class="links-inactive" id="signup-google"><div class="fa fa-google"></div> Signup with Google+</div>
 				</div>
 				<form class="forms" id="signup-form" method="post">
 				<div class="signup-container-fields">

@@ -134,6 +134,18 @@ switch( sActualPage ){
 		];
 		fnPopulateGridArea('#partners-grids', ajGridData);
 		break;
+
+
+	case 'single-event.php':
+		var ajGridData = [
+			{
+				'label'		: 'microsoft',
+				'icon'		: 'assets/logos/Microsoft-Logo-PNG.png',
+				'href'		: ''
+			}
+		];
+		fnPopulateGridArea('#single-event-sponsor', ajGridData);
+		break;
 }
 
 
@@ -178,6 +190,12 @@ $(document).on('mouseout', '#side-bar li:not(:first-of-type)', function(){
 
 	// Change icon element's background image:
 	$( this ).find('.side-bar-icons').css('background-image', "url('" + sIconFile + "')");
+});
+
+// Switch filter box on events page:
+$(document).on('click', '.main-event-filters', function(){
+	$( '.main-event-filters' ).removeClass('selected');
+	$( this ).addClass('selected');
 });
 
 
