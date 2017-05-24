@@ -29,8 +29,8 @@
 						<div class="account-label">Photo</div>
 						<div id="account-img"></div>
 						<div id="photo-info-container">
-							<div class="inactive-links" id="change-photo-btn">CHANGE PHOTO <i class="fa fa-sort-desc"></i></div>
-							<div>This photo is used for your profile, and appears in event's attendants list</div>
+							<div class="inactive-links" id="change-photo-btn" class="buttons">CHANGE PHOTO <i class="fa fa-sort-desc"></i></div>
+							<div id="photo-description">This photo is used for your profile, and appears in event's attendants list</div>
 						</div>
 					</div>
 					<div>
@@ -51,8 +51,8 @@
 						<div id="change-password">Change password</div>
 					</div>
 
-					<div>
-						<div id="account-save-changes-btn">Save Changes</div>
+					<div id="account-save-container">
+						<div id="account-save-changes-btn" class="buttons">Save Changes</div>
 						<div id="account-delete-account-btn">Delete my account</div>
 					</div>
 					
