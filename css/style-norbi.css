@@ -106,3 +106,47 @@
   content:'at ';
   text-transform: lowercase;
 }
+
+[data-page-name="manage-users-page"] #user-list {
+  width:100%;
+  border-collapse:collapse;
+  background:yellow;
+}
+
+[data-page-name="manage-users-page"] .tr {
+  display:flex;
+  border-bottom:1px solid rgba(0,0,0,0.2);
+  text-align:center;
+  justify-content:space-between;
+}
+
+[data-page-name="manage-users-page"] .td {
+    width: 20%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+[data-page-name="manage-users-page"] .checkmark-cells {
+  width: 8%;
+}
+
+[data-page-name="manage-users-page"] .row-button-wraps {
+  width: 32%;
+}
+
+[data-page-name="manage-users-page"] .row-button-wraps .buttons {
+  margin:10px;
+}
+
+/*
+  --------------------------
+    MOBILE SCREEN RULES:
+  --------------------------
+                */
+
+@media only screen and (max-width: 640px) {
+  [data-page-name="events-page"] .main-event-filters:after {
+    content:url('../assets/icons/arrow_down.svg');
+    display:none;
+  }
+}
