@@ -1,10 +1,10 @@
 <?php
-/*THIS API FOR UPDATING EACH USER'S PRIVILEGE, EITHER FOR UPGRADING OR DEGRADING, DEPENDING ON THE POSTED DATA*/
 
 $sNewFirstName = $_POST['firstName'];
 $sNewLastName = $_POST['lastName'];
 $sNewEmail = $_POST['email'];
 $sId = $_POST['sUniqueId'];
+
 
 
 $sFileName = '../texts/users.txt';
