@@ -528,220 +528,92 @@ footer p {
 /* -- UNIQUE PAGE RULES: -- */
 [data-page-name="index-page"] #first-cover-picture {
   background-image: url("../assets/images/hero_photo.png"); }
-
+[data-page-name="index-page"] section {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background: none;
+  color: white; }
+[data-page-name="index-page"] #first-cover-picture {
+  background-image: url("../assets/images/hero_photo.png"); }
 [data-page-name="index-page"] section {
   display: flex;
   justify-content: center;
   text-align: center;
   color: white; }
-
 [data-page-name="index-page"] #short-introduction h4 {
   margin-top: 40px; }
-
 [data-page-name="index-page"] #event-list h4 {
   margin-bottom: 24px; }
-
 [data-page-name="index-page"] #event-list-content {
   margin: 80px 0; }
-
 [data-page-name="index-page"] #event-list .buttons {
   margin-top: 0; }
-
 [data-page-name="index-page"] #event-list ul {
   display: flex;
   width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around; }
-
 [data-page-name="index-page"] #event-list li {
   width: 300px;
   height: 300px;
   margin: 20px;
   background: black; }
-
 [data-page-name="index-page"] #call-to-submit-content {
   margin: 40px 0; }
-
 [data-page-name="index-page"] #call-to-submit-content p {
   margin: 30px 0; }
-
 [data-page-name="index-page"] #call-to-submit-content input {
   width: 100%;
   margin-right: 0; }
-
 [data-page-name="index-page"] #call-to-submit-content form {
   display: flex;
   flex-direction: row; }
-
 [data-page-name="index-page"] #contact-us-content {
   margin: 80px 0 40px 0; }
-
 [data-page-name="index-page"] #contact-info-table {
   display: flex;
   margin: 40px 0;
   flex-direction: row;
   justify-content: space-between; }
-
 [data-page-name="index-page"] .contact-info-cells {
   margin: 1em; }
-
 [data-page-name="index-page"] .contact-info-cells p:not(:last-of-type) {
   margin-bottom: 1em; }
-
 [data-page-name="index-page"] #bottom-map {
   background-image: url("../assets/images/map_bottom.png"); }
 
 [data-page-name="about-page"] section {
   margin: auto; }
-
 [data-page-name="about-page"] #banner-picture {
   background-image: url("../assets/images/about_photo.png"); }
-
 [data-page-name="about-page"] #about-page-content h4 {
   margin: 40px 0 30px 0; }
-
 [data-page-name="about-page"] #about-page-content h5 {
   margin: 0 0 40px 0; }
-
 [data-page-name="about-page"] #follow-us h4 {
   margin: 80px 0 40px 0; }
-
 [data-page-name="about-page"] #team-picture {
   width: 100%;
   margin-top: 40px;
   padding: 0 1em; }
-
 [data-page-name="about-page"] #team-picture img {
   width: 100%; }
 
 [data-page-name="control-panel-page"] h4 {
   margin: 40px 0 30px 0; }
-
 [data-page-name="control-panel-page"] h5 {
   margin-bottom: 10px; }
-
 [data-page-name="control-panel-page"] #banner-picture {
   background-image: url("../assets/images/panel_image.png"); }
 
 [data-page-name="partners-page"] h4 {
   margin: 30px 0; }
-
 [data-page-name="partners-page"] #partners-page-content p {
   margin-bottom: 60px; }
-
 [data-page-name="partners-page"] #banner-picture {
   background-image: url("../assets/images/partners_photo.png"); }
-
-[data-page-name="single-event-page"] #banner-picture {
-  background-image: url("../assets/images/single_event_page_top_photo.png"); }
-
-[data-page-name="single-event-page"] #single-event-page-content {
-  padding-top: 50px;
-  display: flex;
-  width: 700px;
-  padding-bottom: 50px; }
-
-[data-page-name="single-event-page"] #event-info-container {
-  display: flex;
-  flex-direction: column;
-  width: 450px; }
-
-[data-page-name="single-event-page"] #single-event-title {
-  font-size: 24px;
-  font-weight: 500;
-  margin-bottom: 20px; }
-
-[data-page-name="single-event-page"] #single-event-time-location {
-  font-size: 16px;
-  color: grey;
-  margin-bottom: 10px; }
-
-[data-page-name="single-event-page"] #single-event-image-container {
-  background-image: url("../assets/images/machine_learning.jpg");
-  background-size: 450px;
-  width: 450px;
-  height: 350px;
-  margin: 0;
-  padding: 0; }
-
-[data-page-name="single-event-page"] #single-event-description-container {
-  font-size: 16px;
-  background: white;
-  padding: 20px; }
-  [data-page-name="single-event-page"] #single-event-description-container h1 {
-    /*text-transform: uppercase;*/
-    margin-bottom: 10px;
-    margin-top: 10px;
-    font-size: 20px;
-    font-weight: 500; }
-  [data-page-name="single-event-page"] #single-event-description-container p {
-    margin-bottom: 10px;
-    margin-top: 10px;
-    padding: 0;
-    font-weight: 400;
-    line-height: 1.5em; }
-  [data-page-name="single-event-page"] #single-event-description-container span {
-    color: #03A9F4;
-    font-weight: 500; }
-
-[data-page-name="single-event-page"] #event-side-container {
-  margin-left: 50px;
-  display: flex;
-  flex-direction: column;
-  width: 200px; }
-
-[data-page-name="single-event-page"] #register-to-event-btn {
-  text-transform: uppercase;
-  background: #ff5722;
-  padding: 20px;
-  color: white;
-  font-weight: 500;
-  border-radius: 4px;
-  width: 100%;
-  margin-bottom: 20px; }
-
-[data-page-name="single-event-page"] #single-event-pricing {
-  font-weight: 500;
-  color: grey; }
-
-[data-page-name="single-event-page"] #single-event-guest-list {
-  background: white;
-  height: 300px;
-  margin-top: 70px;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  justify-content: stretch; }
-
-[data-page-name="single-event-page"] #single-event-guest-list div {
-  font-weight: 500;
-  text-align: center;
-  font-size: 14px; }
-
-[data-page-name="single-event-page"] #single-event-guest-faces {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  height: 250px; }
-
-[data-page-name="single-event-page"] .guest-face {
-  width: 50px;
-  height: 50px;
-  margin: 10px;
-  border-radius: 50px;
-  background: grey; }
-
-[data-page-name="single-event-page"] .single-event-further-info {
-  display: flex;
-  justify-content: flex-end; }
-
-[data-page-name="single-event-page"] #single-event-sponsor-title {
-  font-weight: 500;
-  font-size: 20px;
-  margin-top: 50px;
-  margin-bottom: 10px; }
 
 /*
 	--------------------------
@@ -752,15 +624,12 @@ footer p {
   [data-page-name="index-page"] #event-list ul {
     flex-direction: column;
     align-items: center; }
-
   [data-page-name="index-page"] #call-to-submit-content form * {
     margin: 15px 0 0 0; }
-
   [data-page-name="index-page"] #call-to-submit-content form {
     flex-direction: column;
     padding: 15px 30px 30px 30px; }
-
   [data-page-name="index-page"] #contact-info-table {
     flex-direction: column; } }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=whydoesntwork.css.map */

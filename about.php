@@ -12,6 +12,14 @@
 		<!-- SIDEBAR: -->
 		<?php require_once('templates/sidebar.php'); ?>
 
+
+
+
+
+
+
+		
+
 		<!-- MAIN PAGE CONTENT: -->
 		<div class="page-contents" data-page-name="about-page">
 			<section class="banner-pictures" id="banner-picture"></section>
@@ -32,6 +40,14 @@
 				<img src="assets/images/origin-team.jpg">
 			</section>
 		</div>
+
+
+
+
+
+
+
+		
 
 		<!-- FOOTER: -->
 		<?php require_once('templates/footer.php'); ?>

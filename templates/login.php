@@ -7,8 +7,8 @@
 			</div>
 			<div class="login-container-child">
 				<div class="login-container-fields">
-					<div id="login-facebook"><div class="fa fa-facebook"></div> Log in with Facebook</div>
-					<div id="login-google"><div class="fa fa-google"></div> Log in with Google+</div>
+					<div class="links-inactive" id="login-facebook"><div class="fa fa-facebook"></div> Log in with Facebook</div>
+					<div class="links-inactive" id="login-google"><div class="fa fa-google"></div> Log in with Google+</div>
 				</div>
 				<form class="forms" id="login-form" method="post">
 				<div class="login-container-fields">

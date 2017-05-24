@@ -2,7 +2,7 @@
 // ██████████████████████████████
 
 var sActualPage	= ( document.location.href.match(/[^\/]+$/) !== null ) ? document.location.href.match(/[^\/]+$/)[0] : 'index.php';
-var loggedIn = false;
+var bLoggedIn = false;
 
 
 
@@ -134,6 +134,18 @@ switch( sActualPage ){
 		];
 		fnPopulateGridArea('#partners-grids', ajGridData);
 		break;
+
+
+	case 'single-event.php':
+		var ajGridData = [
+			{
+				'label'		: 'microsoft',
+				'icon'		: 'assets/logos/Microsoft-Logo-PNG.png',
+				'href'		: ''
+			}
+		];
+		fnPopulateGridArea('#single-event-sponsor', ajGridData);
+		break;
 }
 
 
@@ -180,6 +192,12 @@ $(document).on('mouseout', '#side-bar li:not(:first-of-type)', function(){
 	$( this ).find('.side-bar-icons').css('background-image', "url('" + sIconFile + "')");
 });
 
+// Switch filter box on events page:
+$(document).on('click', '.main-event-filters', function(){
+	$( '.main-event-filters' ).removeClass('selected');
+	$( this ).addClass('selected');
+});
+
 
 
 
@@ -201,7 +219,7 @@ $(document).on("ready", function(){
 		console.log("not logged in");
 	}else{
 		console.log("logged in");
-		loggedIn = true;
+		bLoggedIn = true;
 		var name = localStorage.getItem("name");
 		var email = localStorage.getItem("email");
 		$("#account-name").append(name);
@@ -293,7 +311,7 @@ $(document).on('click', '.closer-elements', function(){
 
 //Function for the popping up login box or the account manual
 $(document).on("click", "#account-icon", function(){
-	if(loggedIn===true){
+	if(bLoggedIn===true){
 		$("#logout-container").fadeIn("fast");
 		$("#logout-container").css("display","flex");
 	}else{
@@ -373,7 +391,7 @@ $("#submit-login").on("click",function(){
 
 //function for logging out
 $(document).on("click", "#log-out-btn", function(){
-	loggedIn=false;
+	bLoggedIn=false;
 	localStorage.clear();
 	$("#logout-container").fadeOut("fast");
 	location.reload();
