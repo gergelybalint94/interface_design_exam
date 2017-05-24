@@ -42,6 +42,7 @@
         "lastName": "Bagdonaite",
         "password": "eidvile",
         "email": "eidvile.bagdonaite@gmail.com",
+<<<<<<< HEAD
 =======
         "firstName": "Jonas",
         "lastName": "David",
@@ -49,5 +50,9 @@
         "email": "a",
 >>>>>>> master
         "admin": false
+=======
+
+        
+>>>>>>> origin/branch-eidvile
     }
 ]
