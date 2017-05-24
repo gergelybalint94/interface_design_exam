@@ -43,8 +43,14 @@
 		<!-- FOOTER: -->
 		<?php require_once('templates/footer.php'); ?>
 
+		<!-- LOGIN POPUP: -->
+		<?php require_once('templates/login.php'); ?>
+
 		<!-- REGISTRATION POPUP: -->
 		<?php require_once('templates/registration.php'); ?>
+
+		<!-- LOGOUT POPUP: -->
+		<?php require_once('templates/logout.php'); ?>
 
 
 		<!-- JQUERY LINKED IN BELOW: -->
