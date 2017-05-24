@@ -84,7 +84,7 @@ if( sActualPage === 'manage-users.php'){
 				'<div class="td links-inactive last-names">{{lastName}}</div>' +
 				'<div class="td links-inactive emails">{{email}}</div>' +
 				'<div class="td row-button-wraps">' +
-					'<div class="buttons main-buttons save-buttons links-inactive">Save</div>' +
+					'<div class="buttons main-buttons save-buttons links-active">Save</div>' +
 					'<div class="buttons warning-buttons delete-buttons links-inactive">Delete</div>' +
 				'</div>' +
 			'</div>';
@@ -109,9 +109,25 @@ $(document).on('click', '[data-page-name="manage-users-page"] #user-list .save-b
 	var sFirstName	= sRowToSave.find('.first-names').text();
 	var sLastName	= sRowToSave.find('.last-names').text();
 	var sEmail		= sRowToSave.find('.emails').text();
+	var jFreshData	= {
+		"sUniqueId"	: sRowToSave.attr('id'),
+		"firstName"	: sFirstName,
+		"lastName"	: sLastName,
+		"email"		: sEmail,
+		"admin"		: bIsAdmin
+	}
 
 	// Send data to back end:
-	alert(bIsAdmin);
+	$.ajax({
+		method	: 'post',
+		url 	: 'api/api-edit-user.php',
+		data 	: jFreshData
+	})
+	.done(function( sResponse ){
+		alert(sResponse);
+		$('[data-page-name="manage-users-page"] .checkmark-cells').removeClass('uncommited');
+	});
+
 });
 
 // Change user's site admin status on manage user list page:
@@ -161,8 +177,10 @@ switch( sActualPage ){
 				'active'	: true
 			},
 			{
+
 				'label'		: 'site analytics',
 				'icon'		: 'assets/icons/analytics.svg'
+
 			},
 			{
 				'label'		: 'edit site contents',
@@ -471,20 +489,70 @@ if (sActualPage=="my-account.php") {
 
 //update users
 $(document).on("click", "#account-save-changes-btn", function(){
-	var newFirstName = $("#account-name-input").val();
-	var newLastName = $("#account-surname-input").val();
-	var newEmail = $("#account-email-input").val();
+	swal({
+	  title: "Are you sure?",
+	  text: "Your account will be modified on the server!",
+	  type: "warning",
+	  showCancelButton: true,
+	  confirmButtonClass: "btn-danger",
+	  confirmButtonText: "Yes, update it!",
+	  closeOnConfirm: true
+	},
+	  function(isConfirm) {
+  		if (isConfirm) {
+			var newFirstName = $("#account-name-input").val();
+			var newLastName = $("#account-surname-input").val();
+			var newEmail = $("#account-email-input").val();
+			var sUniqueId = localStorage.getItem("sUniqueId");
+			$.ajax({
+				"method":"POST",
+				"url":"api/api-edit-user.php",
+				"data"		: {
+					"firstName"	: newFirstName,
+					"lastName"	: newLastName,
+					"sUniqueId"	: sUniqueId,
+					"email"		: newEmail
+				},
+			});	
+		} else {
+		    swal("Cancelled", "Your changes has not taken place in the database :)", "error");
+  		}
+	});
+	
+});
+
+//delete users call
+$(document).on("click", "#account-delete-account-btn", function(){
 	var sUniqueId = localStorage.getItem("sUniqueId");
+	swal({
+	  title: "Are you sure?",
+	  text: "Your will not be able to recover this user!",
+	  type: "warning",
+	  showCancelButton: true,
+	  confirmButtonClass: "btn-danger",
+	  confirmButtonText: "Yes, delete it!",
+	  closeOnConfirm: true
+	},
+	  function(isConfirm) {
+  		if (isConfirm) {
+	    	fnDeleteUser(sUniqueId);
+			window.location.href = "index.php";
+			localStorage.clear();
+			 } else {
+		    swal("Cancelled", "Your imaginary file is safe :)", "error");
+  		}
+	});
+	});
+
+//function for deleting users
+
+function fnDeleteUser(userId){
 	$.ajax({
 		"method":"POST",
-		"url":"api/api-edit-user.php",
+		"url":"api/api-delete-user.php",
 		"data"		: {
-			"firstName"	: newFirstName,
-			"lastName"	: newLastName,
-			"sUniqueId"	: sUniqueId,
-			"email"		: newEmail
+			"sUniqueId"	: sUniqueId
 		},
-	}).done(function(sData){
-		console.log(sData);
 	});	
-});
+};
+

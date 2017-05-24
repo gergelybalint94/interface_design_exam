@@ -37,10 +37,17 @@
     },
     {
         "sUniqueId": 10006,
+<<<<<<< HEAD
         "firstName": "Eidvile",
         "lastName": "Bagdonaite",
         "password": "eidvile",
         "email": "eidvile.bagdonaite@gmail.com",
+=======
+        "firstName": "Jonas",
+        "lastName": "David",
+        "password": "a",
+        "email": "a",
+>>>>>>> master
         "admin": false
     }
 ]
