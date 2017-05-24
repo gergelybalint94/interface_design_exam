@@ -4,8 +4,8 @@
         "firstName": "balint",
         "lastName": "gergely",
         "password": "2",
-        "email": "gergelybalint94@gmail.com",
-        "admin": "false"
+        "email": "gergelybalint94@gmail.com"
+
     },
     {
         "sUniqueId": 10002,
