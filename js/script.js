@@ -161,8 +161,8 @@ switch( sActualPage ){
 				'active'	: true
 			},
 			{
-				'label'		: 'add new website admin',
-				'icon'		: 'assets/icons/add_admin.svg'
+				'label'		: 'site analytics',
+				'icon'		: 'assets/icons/analytics.svg'
 			},
 			{
 				'label'		: 'edit site contents',
