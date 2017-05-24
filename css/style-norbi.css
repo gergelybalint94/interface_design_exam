@@ -1,0 +1,40 @@
+/* buttons:; */
+.warning-buttons {
+  color:white;
+  background:#FF5722;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* different page layout rules */
+[data-page-name="manage-users-page"] .td {
+  display:flex;
+  padding:10px;
+  align-items:center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+[data-page-name="manage-users-page"] .row-button-wraps .buttons {
+  margin:0 10px;
+  padding:12px 20px; }
+
+[data-page-name="manage-users-page"] .uncommited {
+  color:grey;
+}
