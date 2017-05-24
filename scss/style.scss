@@ -740,6 +740,7 @@ footer p { font-size:12px; }
 
 [data-page-name="manage-users-page"] .row-button-wraps {
   width: unquote($tableWidth/$buttonWrapsWidth + '%');
+  min-width: 225px;
 }
 
 
