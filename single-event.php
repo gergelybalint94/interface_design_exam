@@ -37,10 +37,10 @@
 							<p>JOHN MICROSOFT - Aliquam egestas ac felis non scelerisque. Praesent mollis et nibh ac finibus. In viverra lorem at dui volutpat, eleifend fermentum tellus consectetur. Integer consequat ut nulla id maximus. Nulla facilisi. In a vestibulum odio. In vestibulum at ex id imperdiet. Sed non faucibus quam.</p>
 						</div>
 						<div id="single-event-tags">Tags: 
-							<span>#MachineLearning</span>
-							<span>#Software</span>
-							<span>#Microsoft</span>
-							<span>#Conference</span>
+							<span class="links-inactive">#MachineLearning</span>
+							<span class="links-inactive">#Software</span>
+							<span class="links-inactive">#Microsoft</span>
+							<span class="links-inactive">#Conference</span>
 						</div>
 					</div>
 				</div>
@@ -60,7 +60,7 @@
 							<div class="guest-face links-inactive" style="background-image: url('assets/images/attendant_6.png');"></div>
 
 						</div>
-						<div class="single-event-further-info"><i class="fa fa-arrow-right"></i></div>
+						<div class="single-event-further-info links-inactive"><i class="fa fa-arrow-right"></i></div>
 					</div>
 					<h2 id="single-event-sponsor-title">Event is supported by:</h2>
 					<div id="single-event-sponsor" class="grid-areas"></div>

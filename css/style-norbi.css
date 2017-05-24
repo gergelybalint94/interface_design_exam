@@ -106,3 +106,16 @@
   content:'at ';
   text-transform: lowercase;
 }
+
+/*
+  --------------------------
+    MOBILE SCREEN RULES:
+  --------------------------
+                */
+
+@media only screen and (max-width: 640px) {
+  [data-page-name="events-page"] .main-event-filters:after {
+    content:url('../assets/icons/arrow_down.svg');
+    display:none;
+  }
+}
