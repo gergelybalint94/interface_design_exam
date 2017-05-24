@@ -161,8 +161,10 @@ switch( sActualPage ){
 				'active'	: true
 			},
 			{
+
 				'label'		: 'site analytics',
 				'icon'		: 'assets/icons/analytics.svg'
+
 			},
 			{
 				'label'		: 'edit site contents',
