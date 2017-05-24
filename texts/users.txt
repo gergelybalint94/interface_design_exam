@@ -19,5 +19,12 @@
         "lastName": "",
         "password": "",
         "email": ""
+    },
+    {
+        "sUniqueId": 10004,
+        "firstName": "Balint",
+        "lastName": "Gergely",
+        "password": "bali",
+        "email": "gergelybalint94@gmail.com"
     }
 ]
