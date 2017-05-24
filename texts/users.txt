@@ -34,5 +34,13 @@
         "password": "333",
         "email": "tikameggy",
         "admin": "false"
+    },
+    {
+        "sUniqueId": 10006,
+        "firstName": "Eidvile",
+        "lastName": "Bagdonaite",
+        "password": "eidvile",
+        "email": "eidvile.bagdonaite@gmail.com",
+        "admin": false
     }
 ]
