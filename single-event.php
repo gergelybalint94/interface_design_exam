@@ -52,12 +52,12 @@
 					<div id="single-event-guest-list" class="single-event-side-containers">
 						<div>See who is attending:</div>
 						<div id="single-event-guest-faces" class="single-event-icons">
-							<div class="guest-face" style="background-image: url('assets/images/attendant_1.jpeg');"></div>
-							<div class="guest-face" style="background-image: url('assets/images/attendant_2.jpeg');"></div>
-							<div class="guest-face" style="background-image: url('assets/images/attendant_3.png');"></div>
-							<div class="guest-face" style="background-image: url('assets/images/attendant_4.png');"></div>
-							<div class="guest-face" style="background-image: url('assets/images/attendant_5.png');"></div>
-							<div class="guest-face" style="background-image: url('assets/images/attendant_6.png');"></div>
+							<div class="guest-face links-inactive" style="background-image: url('assets/images/attendant_1.jpeg');"></div>
+							<div class="guest-face links-inactive" style="background-image: url('assets/images/attendant_2.jpeg');"></div>
+							<div class="guest-face links-inactive" style="background-image: url('assets/images/attendant_3.png');"></div>
+							<div class="guest-face links-inactive" style="background-image: url('assets/images/attendant_4.png');"></div>
+							<div class="guest-face links-inactive" style="background-image: url('assets/images/attendant_5.png');"></div>
+							<div class="guest-face links-inactive" style="background-image: url('assets/images/attendant_6.png');"></div>
 
 						</div>
 						<div class="single-event-further-info"><i class="fa fa-arrow-right"></i></div>
@@ -67,10 +67,10 @@
 					<div class="single-event-side-containers" id="single-event-social-container">
 						<div>Share event in other media</div>
 						<div id="single-event-share-event" class="single-event-icons">
-							<div class="single-event-social-media-icons" style="background-image: url('assets/icons/facebook-logo-button.svg')"	></div>
-							<div class="single-event-social-media-icons" style="background-image: url('assets/icons/google-plus-logo-button.svg')"></div>
-							<div class="single-event-social-media-icons" style="background-image: url('assets/icons/twitter-logo-button.svg')"></div>
-							<div class="single-event-social-media-icons" style="background-image: url('assets/icons/share.svg')"></div>	
+							<div class="single-event-social-media-icons social-media-icons links-inactive" style="background-image: url('assets/icons/facebook-logo-button.svg')"	></div>
+							<div class="single-event-social-media-icons social-media-icons links-inactive" style="background-image: url('assets/icons/google-plus-logo-button.svg')"></div>
+							<div class="single-event-social-media-icons social-media-icons links-inactive" style="background-image: url('assets/icons/twitter-logo-button.svg')"></div>
+							<div class="single-event-social-media-icons social-media-icons links-inactive" style="background-image: url('assets/icons/share.svg')"></div>	
 						</div>		
 					</div>
 

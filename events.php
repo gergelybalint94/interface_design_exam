@@ -40,7 +40,7 @@
 
 			<section class="content-max-width-narrow" id="event-list">
 
-				<div class="event-list-item-wraps background-pictures" style="background-image:url('../assets/images/awards.png');">
+				<div class="event-list-item-wraps background-pictures links-active" style="background-image:url('assets/images/events-machine-learning.png');" data-href="single-event.php">
 					<div class="event-list-items">
 						<div class="event-titles fontWeight-medium">MICROSOFT Hackathon: Machine Learning for the Search for Extraterrestrial Intelligence</div>
 						<div class="event-date-place-wraps">
@@ -50,7 +50,7 @@
 					</div>
 				</div>
 
-				<div class="event-list-item-wraps background-pictures" style="background-image:url('../assets/images/partners_photo.png');">
+				<div class="event-list-item-wraps background-pictures links-inactive" style="background-image:url('assets/images/mr-robot.png');">
 					<div class="event-list-items">
 						<div class="event-titles fontWeight-medium">BLUE OCEAN ROBOTICS presents: Meet the scientist. Robotics.</div>
 						<div class="event-date-place-wraps">
@@ -60,7 +60,7 @@
 					</div>
 				</div>
 
-				<div class="event-list-item-wraps background-pictures" style="background-image:url('../assets/images/partners_photo.png');">
+				<div class="event-list-item-wraps background-pictures links-inactive" style="background-image:url('assets/images/biotech.jpg');">
 					<div class="event-list-items">
 						<div class="event-titles fontWeight-medium">Exploring the New Horizons of Nano Biotech</div>
 						<div class="event-date-place-wraps">
@@ -70,7 +70,7 @@
 					</div>
 				</div>
 
-				<div class="event-list-item-wraps background-pictures" style="background-image:url('../assets/images/partners_photo.png');">
+				<div class="event-list-item-wraps background-pictures links-inactive" style="background-image:url('assets/images/awards.jpg');">
 					<div class="event-list-items">
 						<div class="event-titles fontWeight-medium">Tech Geek Awards 2017</div>
 						<div class="event-date-place-wraps">
