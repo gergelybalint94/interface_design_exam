@@ -24,6 +24,7 @@
 	$jUsers -> lastName = $sLastName;
 	$jUsers -> password = $sPassword;
 	$jUsers -> email = $sEmail;
+	$jUsers -> admin = false;
 
 	array_push( $ajUsers , $jUsers );
 

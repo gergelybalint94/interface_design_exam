@@ -12,7 +12,7 @@
 	<li class="fontWeight-medium links-active" data-href="about.php">
 		<div class="side-bar-icons" id="about" data-original-background=""></div>About
 	</li>
-	<li class="fontWeight-medium links-inactive">
+	<li class="fontWeight-medium links-active" data-href="my-account.php">
 		<div class="side-bar-icons" id="account" data-original-background=""></div>Account
 	</li>
 	<li class="fontWeight-medium links-active" data-href="control-panel.php">
