@@ -84,7 +84,7 @@ if( sActualPage === 'manage-users.php'){
 				'<div class="td links-inactive last-names">{{lastName}}</div>' +
 				'<div class="td links-inactive emails">{{email}}</div>' +
 				'<div class="td row-button-wraps">' +
-					'<div class="buttons main-buttons save-buttons links-inactive">Save</div>' +
+					'<div class="buttons main-buttons save-buttons links-active">Save</div>' +
 					'<div class="buttons warning-buttons delete-buttons links-inactive">Delete</div>' +
 				'</div>' +
 			'</div>';
@@ -109,9 +109,25 @@ $(document).on('click', '[data-page-name="manage-users-page"] #user-list .save-b
 	var sFirstName	= sRowToSave.find('.first-names').text();
 	var sLastName	= sRowToSave.find('.last-names').text();
 	var sEmail		= sRowToSave.find('.emails').text();
+	var jFreshData	= {
+		"sUniqueId"	: sRowToSave.attr('id'),
+		"firstName"	: sFirstName,
+		"lastName"	: sLastName,
+		"email"		: sEmail,
+		"admin"		: bIsAdmin
+	}
 
 	// Send data to back end:
-	alert(bIsAdmin);
+	$.ajax({
+		method	: 'post',
+		url 	: 'api/api-edit-user.php',
+		data 	: jFreshData
+	})
+	.done(function( sResponse ){
+		alert(sResponse);
+		$('[data-page-name="manage-users-page"] .checkmark-cells').removeClass('uncommited');
+	});
+
 });
 
 // Change user's site admin status on manage user list page:

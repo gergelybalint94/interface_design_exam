@@ -4,7 +4,8 @@
         "firstName": "balint",
         "lastName": "gergely",
         "password": "2",
-        "email": "gergelybalint94@gmail.com"
+        "email": "gergelybalint94@gmail.com",
+        "admin": "false"
     },
     {
         "sUniqueId": 10002,
@@ -34,5 +35,13 @@
         "password": "333",
         "email": "tikameggy",
         "admin": "false"
+    },
+    {
+        "sUniqueId": 10006,
+        "firstName": "Jonas",
+        "lastName": "David",
+        "password": "a",
+        "email": "a",
+        "admin": false
     }
 ]
