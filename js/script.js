@@ -25,58 +25,42 @@ switch( sActualPage ){
 		var ajGridData = [
 			{
 				'label'		: 'add new event',
-				'icon'		: 'add_event.svg',
-				'active'	: false,
-				'highlight'	: false,
+				'icon'		: 'assets/icons/add_event.svg',
 				'href'		: ''
 			},
 			{
 				'label'		: 'manage event list',
-				'icon'		: 'edit_event.svg',
-				'active'	: false,
-				'highlight'	: false,
+				'icon'		: 'assets/icons/edit_event.svg',
 				'href'		: ''
 			},
 			{
 				'label'		: 'add new partner',
-				'icon'		: 'add_partner.svg',
-				'active'	: false,
-				'highlight'	: false,
+				'icon'		: 'assets/icons/add_partner.svg',
 				'href'		: ''
 			},
 			{
 				'label'		: 'manage partner list',
-				'icon'		: 'edit_partners.svg',
-				'active'	: false,
-				'highlight'	: false,
+				'icon'		: 'assets/icons/edit_partners.svg',
 				'href'		: ''
 			},
 			{
 				'label'		: 'manage user list',
-				'icon'		: 'edit_users.svg',
-				'active'	: false,
-				'highlight'	: false,
+				'icon'		: 'assets/icons/edit_users.svg',
 				'href'		: ''
 			},
 			{
 				'label'		: 'add new website admin',
-				'icon'		: 'add_admin.svg',
-				'active'	: false,
-				'highlight'	: false,
+				'icon'		: 'assets/icons/add_admin.svg',
 				'href'		: ''
 			},
 			{
 				'label'		: 'edit site contents',
-				'icon'		: 'edit_content.svg',
-				'active'	: false,
-				'highlight'	: false,
+				'icon'		: 'assets/icons/edit_content.svg',
 				'href'		: ''
 			},
 			{
 				'label'		: 'general site settings',
-				'icon'		: 'settings-work-tool.svg',
-				'active'	: false,
-				'highlight'	: false,
+				'icon'		: 'assets/icons/settings-work-tool.svg',
 				'href'		: ''
 			}
 		];
@@ -87,87 +71,64 @@ switch( sActualPage ){
 		var ajGridData = [
 			{
 				'label'		: 'ibm',
-				'icon'		: 'add_event.svg',
-				'active'	: false,
-				'highlight'	: false,
+				'icon'		: 'assets/logos/ibm_logo.png',
 				'href'		: ''
 			},
 			{
 				'label'		: 'danske bank',
-				'icon'		: 'edit_partners.svg',
-				'active'	: false,
-				'highlight'	: false,
+				'icon'		: 'assets/logos/danske_bank_logo.png',
 				'href'		: ''
 			},
 			{
 				'label'		: 'google',
-				'icon'		: 'edit_partners.svg',
-				'active'	: false,
-				'highlight'	: false,
+				'icon'		: 'assets/logos/google.png',
 				'href'		: ''
 			},
 			{
 				'label'		: 'microsoft',
-				'icon'		: 'edit_partners.svg',
-				'active'	: false,
-				'highlight'	: false,
+				'icon'		: 'assets/logos/Microsoft-Logo-PNG.png',
 				'href'		: ''
 			},
 			{
 				'label'		: 'magnetix',
-				'icon'		: 'edit_partners.svg',
-				'active'	: false,
-				'highlight'	: false,
+				'icon'		: 'assets/logos/Partner_DK_logo_46.png',
 				'href'		: ''
 			},
 			{
 				'label'		: 'peytz&co',
-				'icon'		: 'edit_partners.svg',
-				'active'	: false,
-				'highlight'	: false,
+				'icon'		: 'assets/logos/peytz.png',
 				'href'		: ''
 			},
 			{
 				'label'		: 'ideo',
-				'icon'		: 'edit_partners.svg',
-				'active'	: false,
-				'highlight'	: false,
+				'icon'		: 'assets/logos/IDEO_logo_2.png',
 				'href'		: ''
 			},
 			{
 				'label'		: 'danskbiotek',
-				'icon'		: 'edit_partners.svg',
-				'active'	: false,
-				'highlight'	: false,
+				'icon'		: 'assets/logos/logo-big.png',
 				'href'		: ''
 			},
 			{
 				'label'		: 'novo nordisk',
-				'icon'		: 'edit_partners.svg',
-				'active'	: false,
-				'highlight'	: false,
+				'icon'		: 'assets/logos/Novo_Nordisk.svg.png',
 				'href'		: ''
 			},
 			{
 				'label'		: 'blue ocean robotics',
-				'icon'		: 'edit_partners.svg',
-				'active'	: false,
-				'highlight'	: false,
+				'icon'		: 'assets/logos/robotics2.png',
 				'href'		: ''
 			},
 			{
 				'label'		: 'transfer wise',
-				'icon'		: 'edit_partners.svg',
-				'active'	: false,
-				'highlight'	: false,
+				'icon'		: 'assets/logos/Transferwise_logo.png',
 				'href'		: ''
 			},
 			{
 				'label'		: 'contact us',
-				'icon'		: 'edit_partners.svg',
-				'active'	: false,
-				'highlight'	: true,
+				'icon'		: 'assets/icons/menu-partners.svg',
 				'extraLine'	: 'become our new partner',
+				'highlight'	: true,
 				'href'		: ''
 			}
 		];
@@ -183,6 +144,40 @@ $(document).on('click', '[data-href]', function(){
 	if( $(this).hasClass('links-active') ){
 		window.location.href = $( this ).attr('data-href');
 	}
+});
+
+// Switch side bar icons' background on hover:
+$(document).on('mouseover', '#side-bar li:not(:first-of-type)', function(){
+
+	// Get original icon file's relative path:
+	var sIconFile = $( this ).find('.side-bar-icons').css('background-image'); // get original icon file
+	sIconFile = sIconFile.replace('url(','').replace(')','').replace(/\"/gi, ""); // remove url(" ... ") and keep only its content
+	sIconFile = sIconFile.substring(sIconFile.indexOf("assets/")); // remove everything in the URL before "assets"
+
+	// Convert original icon file into string:
+	var sIconCode = fnStringifySvg( sIconFile );
+
+	// Change background image's fill by code:
+	sIconCode = sIconCode.replace('fill:#1a237e', 'fill:white');
+
+	// Extend CSS background-image url with necessary code:
+	sIconCode = 'data:image/svg+xml;utf8,' + sIconCode;
+
+	// Change icon element's background CSS:
+	$( this ).find('.side-bar-icons').css('background-image', "url('" + sIconCode + "')");
+
+	// Save original file name into icon element's data attribute:
+	$( this ).find('.side-bar-icons').attr('data-original-background', sIconFile);
+});
+
+// Switch side bar icons' background back to original on mouse leaving:
+$(document).on('mouseout', '#side-bar li:not(:first-of-type)', function(){
+
+	// Get side bar icon's original background image:
+	var sIconFile = $( this ).find('.side-bar-icons').attr('data-original-background');
+
+	// Change icon element's background image:
+	$( this ).find('.side-bar-icons').css('background-image', "url('" + sIconFile + "')");
 });
 
 
@@ -214,11 +209,32 @@ $(document).on("ready", function(){
 	}
 });
 
+// Function to get SVG files as strings:
+function fnStringifySvg( sFilePath ){
+	var sOutput;
+	
+	$.ajax({
+	  url		: sFilePath,
+	  async		: false, // important, otherwise 'return' won't wait for the result!
+	  dataType	: 'text',
+	  success	: function( sSvgCode ){
+	    sOutput = sSvgCode;
+	  },
+	  error: function(){
+	  	console.log('file "' + sFilePath + '" could not be found!');
+	  }
+	});
+	
+	return sOutput;
+}
+
 // Function to populate grid areas:
 function fnPopulateGridArea( sGridAreaSelector, ajGridData ){
 	var sBluePrint = 
 		'<div class="grids {{is-active}} {{is-highlighted}}" data-href="{{href}}">' +
-			'<div class="grid-icons" style="background-image: url(&quot;assets/icons/{{icon}}&quot;);"></div>' +
+			'<div class="grid-icon-wraps">' +
+				'<div class="grid-icons" id="{{id}}"></div>' +
+			'</div>' +
 			'{{is-extra-line}}' +
 			'<div class="grid-labels">{{label}}</div>' +
 		'</div>';
@@ -226,13 +242,36 @@ function fnPopulateGridArea( sGridAreaSelector, ajGridData ){
 	for(var i = 0; i < ajGridData.length; i++){
 
 		var sBluePrintCopy = sBluePrint;
-			sBluePrintCopy = sBluePrintCopy.replace('{{is-active}}', ( typeof( ajGridData[i].active ) === 'undefined' || ajGridData[i].active === false ) ? 'links-inactive' : 'links-active' );
-			sBluePrintCopy = sBluePrintCopy.replace('{{is-highlighted}}', ( typeof( ajGridData[i].active ) === 'undefined' || ajGridData[i].highlight === false ) ? '' : 'highlighted' );
-			sBluePrintCopy = sBluePrintCopy.replace('{{href}}', ajGridData[i].href);
-			sBluePrintCopy = sBluePrintCopy.replace('{{icon}}', ajGridData[i].icon);
-			sBluePrintCopy = sBluePrintCopy.replace('{{label}}', ajGridData[i].label);
-			sBluePrintCopy = sBluePrintCopy.replace('{{is-extra-line}}', ( typeof( ajGridData[i].extraLine ) === 'undefined' || ajGridData[i].extraLine === false ) ? '' : '<p class="extra-lines">' + ajGridData[i].extraLine + '</p>' );
+		sBluePrintCopy = sBluePrintCopy.replace('{{is-active}}', ( typeof( ajGridData[i].active ) === 'undefined' || ajGridData[i].active === false ) ? 'links-inactive' : 'links-active' );
+		sBluePrintCopy = sBluePrintCopy.replace('{{is-highlighted}}', ( typeof( ajGridData[i].highlight ) === 'undefined' || ajGridData[i].highlight === false ) ? '' : 'highlighted' );
+		sBluePrintCopy = sBluePrintCopy.replace('{{href}}', ajGridData[i].href);
+		sBluePrintCopy = sBluePrintCopy.replace('{{id}}', 'grid-icon' + i);
+		sBluePrintCopy = sBluePrintCopy.replace('{{label}}', ajGridData[i].label);
+		sBluePrintCopy = sBluePrintCopy.replace('{{is-extra-line}}', ( typeof( ajGridData[i].extraLine ) === 'undefined' || ajGridData[i].extraLine === false ) ? '' : '<p class="extra-lines">' + ajGridData[i].extraLine + '</p>' );
+
 		$( sGridAreaSelector ).append( sBluePrintCopy );
+
+
+
+		// Change icon background if it is SVG and grid is highlighted:
+		if( ajGridData[i].highlight ){
+
+			// Convert SVG into string:
+			var sIconCode = fnStringifySvg( ajGridData[i].icon );
+
+			// Change given background line:
+			sIconCode = sIconCode.replace('fill:#1a237e', 'fill:white');
+
+			// Add code which is necessary for CSS:
+			sIconCode = 'data:image/svg+xml;utf8,' + sIconCode;
+
+			// Change background CSS:
+			$( '#grid-icon' + i ).css('background-image', "url('" + sIconCode + "')");
+		} else {
+
+			// Change background CSS:
+			$( '#grid-icon' + i ).css('background-image', 'url("' + ajGridData[i].icon + '")');
+		}
 	}
 }
 
@@ -262,23 +301,13 @@ $(document).on("click", "#account-icon", function(){
 	}
 });
 
-//Function to close the logout container
-$(document).on("click", "#close-log-out-container", function(){
-	$("#logout-container").fadeOut('fast');
-});
-
 //Function to close the login container
-$(document).on("click", "#close-login-container", function(){
-	$("#login-wrap").fadeOut('fast');
-});
-
-//Function to close the signup container
-$(document).on("click", ".close-signup-onclick-elements", function(){
-	$("#registration-wrap").fadeOut('fast');
+$(document).on("click", ".close-popup-onclick-elements", function(){
+	$(".close-these-popups").fadeOut('fast');
 });
 
 // Ignore click if it happens on a child element:
-$(document).on('click', ".close-signup-onclick-elements *", function(e) {
+$(document).on('click', ".close-popup-onclick-elements *", function(e) {
 	e.stopPropagation();
 });
 
