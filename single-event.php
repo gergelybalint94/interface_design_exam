@@ -67,10 +67,10 @@
 					<div class="single-event-side-containers" id="single-event-social-container">
 						<div>Share event in other media</div>
 						<div id="single-event-share-event" class="single-event-icons">
-							<div class="single-event-social-media-icons"></div>
-							<div class="single-event-social-media-icons"></div>
-							<div class="single-event-social-media-icons"></div>
-							<div class="single-event-social-media-icons"></div>	
+							<div class="single-event-social-media-icons" style="background-image: url('assets/icons/facebook-logo-button.svg')"	></div>
+							<div class="single-event-social-media-icons" style="background-image: url('assets/icons/google-plus-logo-button.svg')"></div>
+							<div class="single-event-social-media-icons" style="background-image: url('assets/icons/twitter-logo-button.svg')"></div>
+							<div class="single-event-social-media-icons" style="background-image: url('assets/icons/share.svg')"></div>	
 						</div>		
 					</div>
 
