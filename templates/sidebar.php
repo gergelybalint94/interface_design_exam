@@ -3,7 +3,7 @@
 	<li class="fontWeight-medium closer-elements links-active">
 		<div class="side-bar-icons" id="exit" data-original-background=""></div>
 	</li>
-	<li class="fontWeight-medium links-inactive">
+	<li class="fontWeight-medium links-active" data-href="events.php">
 		<div class="side-bar-icons" id="events" data-original-background=""></div>Events
 	</li>
 	<li class="fontWeight-medium links-active" data-href="partners.php">
