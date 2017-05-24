@@ -19,136 +19,6 @@ var bLoggedIn = false;
 // EVENTS:
 // ██████████████████████████████
 
-// Populate grid areas on certain pages:
-switch( sActualPage ){
-	case 'control-panel.php':
-		var ajGridData = [
-			{
-				'label'		: 'add new event',
-				'icon'		: 'assets/icons/add_event.svg',
-				'href'		: ''
-			},
-			{
-				'label'		: 'manage event list',
-				'icon'		: 'assets/icons/edit_event.svg',
-				'href'		: ''
-			},
-			{
-				'label'		: 'add new partner',
-				'icon'		: 'assets/icons/add_partner.svg',
-				'href'		: ''
-			},
-			{
-				'label'		: 'manage partner list',
-				'icon'		: 'assets/icons/edit_partners.svg',
-				'href'		: ''
-			},
-			{
-				'label'		: 'manage user list',
-				'icon'		: 'assets/icons/edit_users.svg',
-				'href'		: ''
-			},
-			{
-				'label'		: 'add new website admin',
-				'icon'		: 'assets/icons/add_admin.svg',
-				'href'		: ''
-			},
-			{
-				'label'		: 'edit site contents',
-				'icon'		: 'assets/icons/edit_content.svg',
-				'href'		: ''
-			},
-			{
-				'label'		: 'general site settings',
-				'icon'		: 'assets/icons/settings-work-tool.svg',
-				'href'		: ''
-			}
-		];
-		fnPopulateGridArea('#control-panel-grids', ajGridData);
-		break;
-
-	case 'partners.php':
-		var ajGridData = [
-			{
-				'label'		: 'ibm',
-				'icon'		: 'assets/logos/ibm_logo.png',
-				'href'		: ''
-			},
-			{
-				'label'		: 'danske bank',
-				'icon'		: 'assets/logos/danske_bank_logo.png',
-				'href'		: ''
-			},
-			{
-				'label'		: 'google',
-				'icon'		: 'assets/logos/google.png',
-				'href'		: ''
-			},
-			{
-				'label'		: 'microsoft',
-				'icon'		: 'assets/logos/Microsoft-Logo-PNG.png',
-				'href'		: ''
-			},
-			{
-				'label'		: 'magnetix',
-				'icon'		: 'assets/logos/Partner_DK_logo_46.png',
-				'href'		: ''
-			},
-			{
-				'label'		: 'peytz&co',
-				'icon'		: 'assets/logos/peytz.png',
-				'href'		: ''
-			},
-			{
-				'label'		: 'ideo',
-				'icon'		: 'assets/logos/IDEO_logo_2.png',
-				'href'		: ''
-			},
-			{
-				'label'		: 'danskbiotek',
-				'icon'		: 'assets/logos/logo-big.png',
-				'href'		: ''
-			},
-			{
-				'label'		: 'novo nordisk',
-				'icon'		: 'assets/logos/Novo_Nordisk.svg.png',
-				'href'		: ''
-			},
-			{
-				'label'		: 'blue ocean robotics',
-				'icon'		: 'assets/logos/robotics2.png',
-				'href'		: ''
-			},
-			{
-				'label'		: 'transfer wise',
-				'icon'		: 'assets/logos/Transferwise_logo.png',
-				'href'		: ''
-			},
-			{
-				'label'		: 'contact us',
-				'icon'		: 'assets/icons/menu-partners.svg',
-				'extraLine'	: 'become our new partner',
-				'highlight'	: true,
-				'href'		: ''
-			}
-		];
-		fnPopulateGridArea('#partners-grids', ajGridData);
-		break;
-
-
-	case 'single-event.php':
-		var ajGridData = [
-			{
-				'label'		: 'microsoft',
-				'icon'		: 'assets/logos/Microsoft-Logo-PNG.png',
-				'href'		: ''
-			}
-		];
-		fnPopulateGridArea('#single-event-sponsor', ajGridData);
-		break;
-}
-
-
 // Redirect when clicking on elements with 'data-href' attribute:
 $(document).on('click', '[data-href]', function(){
 	
@@ -197,6 +67,182 @@ $(document).on('click', '.main-event-filters', function(){
 	$( '.main-event-filters' ).removeClass('selected');
 	$( this ).addClass('selected');
 });
+
+// Fetch user list on manage user list page:
+if( sActualPage === 'manage-users.php'){
+	$.ajax({
+		url 		: 'texts/users.txt',
+		dataType	: 'json',
+		async		: false
+	})
+	.done(function( ajResults ){
+
+		var sBluePrint =
+			'<div class="tr" id="{{user-id}}">' +
+				'<div class="td checkmark-cells fa {{icon}} fw links-active"></div>' +
+				'<div class="td links-inactive first-names">{{firstName}}</div>' +
+				'<div class="td links-inactive last-names">{{lastName}}</div>' +
+				'<div class="td links-inactive emails">{{email}}</div>' +
+				'<div class="td row-button-wraps">' +
+					'<div class="buttons main-buttons save-buttons links-inactive">Save</div>' +
+					'<div class="buttons warning-buttons delete-buttons links-inactive">Delete</div>' +
+				'</div>' +
+			'</div>';
+
+		for(var i = 0; i < ajResults.length; i++){
+			var sBluePrintCopy = sBluePrint;
+			sBluePrintCopy = sBluePrintCopy.replace('{{user-id}}', ajResults[i].sUniqueId );
+			sBluePrintCopy = sBluePrintCopy.replace('{{icon}}', ( ajResults[i].admin === true ) ? 'fa-check' : 'fa-circle-o' );
+			sBluePrintCopy = sBluePrintCopy.replace('{{firstName}}', ajResults[i].firstName );
+			sBluePrintCopy = sBluePrintCopy.replace('{{lastName}}', ajResults[i].lastName );
+			sBluePrintCopy = sBluePrintCopy.replace('{{email}}', ajResults[i].email );
+
+			$('#user-list').append( sBluePrintCopy );
+		}
+	});
+}
+
+// Submit edited user list row on manage-users.php:
+$(document).on('click', '[data-page-name="manage-users-page"] #user-list .save-buttons', function(){
+	var sRowToSave	= $( this ).parent().parent();
+	var bIsAdmin	= ( sRowToSave.find('.checkmark-cells').hasClass('fa-check') ) ? true : false;
+	var sFirstName	= sRowToSave.find('.first-names').text();
+	var sLastName	= sRowToSave.find('.last-names').text();
+	var sEmail		= sRowToSave.find('.emails').text();
+
+	// Send data to back end:
+	alert(bIsAdmin);
+});
+
+// Change user's site admin status on manage user list page:
+$(document).on('click', '[data-page-name="manage-users-page"] .checkmark-cells', function(){
+	var bUncommited	= $( this ).hasClass('uncommited');
+	var bIsAdmin	= $( this ).hasClass('fa-check');
+
+	// Check if site admin status has been changed:
+	if( !bUncommited ){
+		$( this ).addClass('uncommited');
+	} else {
+		$( this ).removeClass('uncommited');
+	}
+
+	// Change icon:
+	if( bIsAdmin ){
+		$( this ).removeClass('fa-check').addClass('fa-circle-o');
+	} else {
+		$( this ).removeClass('fa-circle-o').addClass('fa-check');
+	}
+});
+
+// Populate grid areas on certain pages:
+switch( sActualPage ){
+	case 'control-panel.php':
+		var ajGridData = [
+			{
+				'label'		: 'add new event',
+				'icon'		: 'assets/icons/add_event.svg'
+			},
+			{
+				'label'		: 'manage event list',
+				'icon'		: 'assets/icons/edit_event.svg'
+			},
+			{
+				'label'		: 'add new partner',
+				'icon'		: 'assets/icons/add_partner.svg'
+			},
+			{
+				'label'		: 'manage partner list',
+				'icon'		: 'assets/icons/edit_partners.svg'
+			},
+			{
+				'label'		: 'manage user list',
+				'icon'		: 'assets/icons/edit_users.svg',
+				'href'		: 'manage-users.php',
+				'active'	: true
+			},
+			{
+				'label'		: 'add new website admin',
+				'icon'		: 'assets/icons/add_admin.svg'
+			},
+			{
+				'label'		: 'edit site contents',
+				'icon'		: 'assets/icons/edit_content.svg'
+			},
+			{
+				'label'		: 'general site settings',
+				'icon'		: 'assets/icons/settings-work-tool.svg'
+			}
+		];
+		fnPopulateGridArea('#control-panel-grids', ajGridData);
+		break;
+
+	case 'partners.php':
+		var ajGridData = [
+			{
+				'label'		: 'ibm',
+				'icon'		: 'assets/logos/ibm_logo.png'
+			},
+			{
+				'label'		: 'danske bank',
+				'icon'		: 'assets/logos/danske_bank_logo.png'
+			},
+			{
+				'label'		: 'google',
+				'icon'		: 'assets/logos/google.png'
+			},
+			{
+				'label'		: 'microsoft',
+				'icon'		: 'assets/logos/Microsoft-Logo-PNG.png'
+			},
+			{
+				'label'		: 'magnetix',
+				'icon'		: 'assets/logos/Partner_DK_logo_46.png'
+			},
+			{
+				'label'		: 'peytz&co',
+				'icon'		: 'assets/logos/peytz.png'
+			},
+			{
+				'label'		: 'ideo',
+				'icon'		: 'assets/logos/IDEO_logo_2.png'
+			},
+			{
+				'label'		: 'danskbiotek',
+				'icon'		: 'assets/logos/logo-big.png'
+			},
+			{
+				'label'		: 'novo nordisk',
+				'icon'		: 'assets/logos/Novo_Nordisk.svg.png'
+			},
+			{
+				'label'		: 'blue ocean robotics',
+				'icon'		: 'assets/logos/robotics2.png'
+			},
+			{
+				'label'		: 'transfer wise',
+				'icon'		: 'assets/logos/Transferwise_logo.png'
+			},
+			{
+				'label'		: 'contact us',
+				'icon'		: 'assets/icons/menu-partners.svg',
+				'extraLine'	: 'become our new partner',
+				'highlight'	: true
+			}
+		];
+		fnPopulateGridArea('#partners-grids', ajGridData);
+		break;
+
+
+	case 'single-event.php':
+		var ajGridData = [
+			{
+				'label'		: 'microsoft',
+				'icon'		: 'assets/logos/Microsoft-Logo-PNG.png'
+			}
+		];
+		fnPopulateGridArea('#single-event-sponsor', ajGridData);
+		break;
+}
 
 
 
@@ -262,7 +308,7 @@ function fnPopulateGridArea( sGridAreaSelector, ajGridData ){
 		var sBluePrintCopy = sBluePrint;
 		sBluePrintCopy = sBluePrintCopy.replace('{{is-active}}', ( typeof( ajGridData[i].active ) === 'undefined' || ajGridData[i].active === false ) ? 'links-inactive' : 'links-active' );
 		sBluePrintCopy = sBluePrintCopy.replace('{{is-highlighted}}', ( typeof( ajGridData[i].highlight ) === 'undefined' || ajGridData[i].highlight === false ) ? '' : 'highlighted' );
-		sBluePrintCopy = sBluePrintCopy.replace('{{href}}', ajGridData[i].href);
+		sBluePrintCopy = sBluePrintCopy.replace('{{href}}', ( typeof( ajGridData[i].href ) === 'undefined' || ajGridData[i].href === false ) ? '' : ajGridData[i].href );
 		sBluePrintCopy = sBluePrintCopy.replace('{{id}}', 'grid-icon' + i);
 		sBluePrintCopy = sBluePrintCopy.replace('{{label}}', ajGridData[i].label);
 		sBluePrintCopy = sBluePrintCopy.replace('{{is-extra-line}}', ( typeof( ajGridData[i].extraLine ) === 'undefined' || ajGridData[i].extraLine === false ) ? '' : '<p class="extra-lines">' + ajGridData[i].extraLine + '</p>' );
