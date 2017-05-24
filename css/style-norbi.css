@@ -15,16 +15,17 @@
 
 [data-page-name="events-page"] #event-filter-area {
   display:flex;
-  padding:1em;
+  padding:0 1em;
   flex-direction:column;
 }
 
 [data-page-name="events-page"] input {
   background:none;
-  margin:0;
-  padding:0 0 10px 0;
+  margin:20px 0;
+  padding:10px 0;
   border:none;
   border-bottom:1px solid rgba(0,0,0,0.2);
+  outline:none;
 }
 
 [data-page-name="events-page"] #main-event-filters-wrap {
@@ -69,22 +70,27 @@
 }
 
 [data-page-name="events-page"] #event-list {
-  background:red;
   display:flex;
   flex-wrap:wrap;
-  justify-content:space-between;
+  justify-content:space-around;
+}
+
+[data-page-name="events-page"] .event-list-item-wraps.background-pictures {
+  margin:30px 1em;
+  background-color:black;
+  background-size:cover;
+  background-position:center;
 }
 
 [data-page-name="events-page"] .event-list-items {
-  background:blue;
   display:flex;
   width:300px;
   height:300px;
-  margin:1em;
   padding:2em;
   flex-direction:column;
   justify-content:space-around;
   color:white;
+  background:rgba(26, 35, 126, 0.5); /* primary color */
 }
 
 [data-page-name="events-page"] .event-titles {
@@ -92,13 +98,55 @@
 }
 
 [data-page-name="events-page"] .event-date-place-wraps {
+  text-align: right;
   text-transform: uppercase;
-}
-
-[data-page-name="events-page"] .event-places {
 }
 
 [data-page-name="events-page"] .event-places:before {
   content:'at ';
   text-transform: lowercase;
+}
+
+[data-page-name="manage-users-page"] #user-list {
+  width:100%;
+  border-collapse:collapse;
+  background:yellow;
+}
+
+[data-page-name="manage-users-page"] .tr {
+  display:flex;
+  border-bottom:1px solid rgba(0,0,0,0.2);
+  text-align:center;
+  justify-content:space-between;
+}
+
+[data-page-name="manage-users-page"] .td {
+    width: 20%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+[data-page-name="manage-users-page"] .checkmark-cells {
+  width: 8%;
+}
+
+[data-page-name="manage-users-page"] .row-button-wraps {
+  width: 32%;
+}
+
+[data-page-name="manage-users-page"] .row-button-wraps .buttons {
+  margin:10px;
+}
+
+/*
+  --------------------------
+    MOBILE SCREEN RULES:
+  --------------------------
+                */
+
+@media only screen and (max-width: 640px) {
+  [data-page-name="events-page"] .main-event-filters:after {
+    content:url('../assets/icons/arrow_down.svg');
+    display:none;
+  }
 }
