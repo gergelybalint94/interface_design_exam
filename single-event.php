@@ -45,9 +45,12 @@
 					</div>
 				</div>
 				<div id="event-side-container">
-					<div id="register-to-event-container"></div>
+					<div id="register-to-event-container">
+						<div id="register-to-event-btn">Register to event</div>
+						<div id="single-event-pricing">EVENT PRICE: 150-300DKK</div>
+					</div>
 					<div id="single-event-guest-list">
-						<div>See who is attending</div>
+						<div>See who is attending:</div>
 						<div id="single-event-guest-faces" class="single-event-icons">
 							<div class="guest-face"></div>
 							<div class="guest-face"></div>
@@ -56,16 +59,17 @@
 							<div class="guest-face"></div>
 							<div class="guest-face"></div>
 						</div>
-						<h2>Event is supported by:</h2>
-						<div id="single-event-sponsor"></div>
-						<div id="single-event-share-event" class="single-event-icons">
-							<div class="single-event-social-media-icons"></div>
-							<div class="single-event-social-media-icons"></div>
-							<div class="single-event-social-media-icons"></div>
-							<div class="single-event-social-media-icons"></div>			
-						</div>
-
+						<div class="single-event-further-info"><i class="fa fa-arrow-right"></i></div>
 					</div>
+					<h2 id="single-event-sponsor-title">Event is supported by:</h2>
+					<div id="single-event-sponsor" class="grid-areas"></div>
+					<div id="single-event-share-event" class="single-event-icons">
+						<div class="single-event-social-media-icons"></div>
+						<div class="single-event-social-media-icons"></div>
+						<div class="single-event-social-media-icons"></div>
+						<div class="single-event-social-media-icons"></div>			
+					</div>
+
 				</div>
 			</section>
 		</div>
