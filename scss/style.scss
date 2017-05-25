@@ -257,7 +257,15 @@ header {
 #sandwich-icon {
   display: flex;
   flex-direction: column;
-  justify-content: space-around; }
+  justify-content: space-around;
+   }
+#sandwich-icon:hover {
+  animation-name: tiltMenu;
+  animation-iteration-count: 4;
+  animation-duration: 0.2s;
+  animation-timing-function: linear;
+   }
+
 
 #header-logo {
   min-width: 160px;
@@ -465,7 +473,8 @@ header {
 	z-index:999;
 	position:absolute;
 	top:65px;
-	right:150px;
+	right:10px
+  ;
 	flex-direction:column;
 	align-items:center;
 	justify-content:center;
@@ -1216,4 +1225,40 @@ footer p { font-size:12px; }
 		width:100%
 	}
 
+}
+
+
+/* CSS ANIMATIONS*/
+@keyframes tiltMenu{
+  0%{
+    transform:rotate(0deg);
+    -webkit-transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
+  }
+  25%{
+    transform:rotate(20deg);
+    -webkit-transform:rotate(20deg);
+    -o-transform:rotate(20deg);
+    -moz-transform:rotate(20deg);
+  }
+  50%{
+    transform:rotate(0deg);
+    -webkit-transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
+  }
+  75%{
+    transform:rotate(-20deg);
+    -webkit-transform:rotate(-20deg);
+    -o-transform:rotate(-20deg);
+    -moz-transform:rotate(-20deg);
+  }
+  100%{
+    transform:rotate(0deg);
+    -webkit-transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
+  }
+  
 }

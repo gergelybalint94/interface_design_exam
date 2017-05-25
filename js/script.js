@@ -126,6 +126,7 @@ if( sActualPage === 'manage-users.php'){
 // Submit edited user list row on manage-users.php:
 $(document).on('click', '[data-page-name="manage-users-page"] #user-list .save-buttons', function(){
 	var sRowToSave	= $( this ).parent().parent();
+	console.log(sRowToSave.attr("id"));
 	var bIsAdmin	= ( sRowToSave.find('.checkmark-cells').hasClass('fa-check') ) ? true : false;
 	var sFirstName	= sRowToSave.find('.first-names').find('.field-values').text();
 	var sLastName	= sRowToSave.find('.last-names').find('.field-values').text();
@@ -503,7 +504,12 @@ $("#submit-login").on("click",function(){
 			$("#login-wrap").fadeOut("fast");
 		    location.reload();
 		}else{
-			alert("Invalid email or password, please try again");
+			swal({
+			  title: "Oooops!",
+			  text: "Wrong email or password, please try again",
+			  type: "error",
+			  confirmButtonText: "Alright!"
+			});
 		};
 	});
 });
