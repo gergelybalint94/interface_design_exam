@@ -97,7 +97,7 @@ if( sActualPage === 'manage-users.php'){
 				'</div>' +
 				'<div class="td row-button-wraps">' +
 					'<div class="buttons main-buttons save-buttons links-active">Save</div>' +
-					'<div class="buttons danger-buttons delete-buttons links-inactive">Delete</div>' +
+					'<div class="buttons danger-buttons delete-buttons links-active">Delete</div>' +
 				'</div>' +
 			'</div>';
 

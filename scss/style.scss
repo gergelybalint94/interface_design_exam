@@ -112,6 +112,10 @@ section {
 .buttons:hover {
   opacity: 0.8; }
 
+.danger-buttons {
+  color:white;
+  background:#FF5722;
+} 
 .main-buttons {
   color: white;
   background: $accentColor1;
@@ -123,6 +127,8 @@ section {
   height: 200px;
   background-color: lightgray;
   background-size: cover; }
+
+  .only-mobile { display:none; }
 
 
 .grid-areas {
@@ -716,10 +722,18 @@ footer p { font-size:12px; }
 }
 
 [data-page-name="manage-users-page"] #user-list {
-  width: unquote($tableWidth + '%');
-  border-collapse:collapse;
-  background:yellow;
-}
+  width: 100%;
+  background: white; }
+
+[data-page-name="manage-users-page"] #user-list .tr {
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+  flex-direction: row;
+  justify-content: space-between; }
+
+  [data-page-name="manage-users-page"] #user-list #header-row { display:flex; }
+
 
 [data-page-name="manage-users-page"] .tr {
   display:flex;
@@ -733,6 +747,17 @@ footer p { font-size:12px; }
     overflow: hidden;
     text-overflow: ellipsis;
 }
+[data-page-name="manage-users-page"] #user-list .td {
+  display:flex;
+  padding:10px;
+  align-items:center;
+  justify-content: center;
+  flex-direction: row;}
+
+[data-page-name="manage-users-page"] #user-list .field-values {
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
 
 [data-page-name="manage-users-page"] .checkmark-cells {
   width: unquote($tableWidth/$checkmarkCellsWidth + '%');
@@ -741,6 +766,24 @@ footer p { font-size:12px; }
 [data-page-name="manage-users-page"] .row-button-wraps {
   width: unquote($tableWidth/$buttonWrapsWidth + '%');
   min-width: 225px;
+}
+[data-page-name="manage-users-page"] #user-list .row-button-wraps .buttons {
+  margin:0 10px;
+  padding:12px 20px; }
+
+[data-page-name="manage-users-page"] #user-list .uncommited {
+  color:grey;
+}
+
+[data-page-name="manage-users-page"] #user-list .admin-action-texts {
+  margin-left:0.5em;
+}
+
+[data-page-name="manage-users-page"] #banner-picture {
+  background-image: url("../assets/images/panel_image.png"); }
+
+[data-page-name="manage-users-page"] h4 {
+  margin:40px 0 30px 0;
 }
 
 
@@ -1099,6 +1142,24 @@ footer p { font-size:12px; }
 	[data-page-name="events-page"] .main-event-filters:after {
     content:url('../assets/icons/arrow_down.svg');
     display:none;
+
+
+
+  .only-mobile { display:block; }
+
+
+
+
+
+
+  [data-page-name="manage-users-page"] #user-list .tr {
+   flex-direction: column;
+    padding:2em 1em;
+  }
+  [data-page-name="manage-users-page"] #user-list #header-row { display:none; }
+  [data-page-name="manage-users-page"] #user-list .td { width: 100% !important }
+  [data-page-name="manage-users-page"] #user-list .td:not(:first-of-type) { justify-content: space-between; }
+  [data-page-name="manage-users-page"] #user-list .mobile-labels { display: inline-block; }  
   }
      }
 
