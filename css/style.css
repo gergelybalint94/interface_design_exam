@@ -247,7 +247,7 @@ header {
 #header-logo {
   min-width: 160px;
   /* so it won't squeeze background picture height too much on screen resize */
-  height: 20px;
+  height: 35px;
   background-image: url("../assets/logos/logo_white.png");
   background-size: contain;
   background-position: center;
@@ -565,7 +565,8 @@ footer p {
   width: 300px;
   height: 300px;
   margin: 20px;
-  background: black; }
+  background-position: center;
+  background-size: cover; }
 
 [data-page-name="index-page"] #call-to-submit-content {
   margin: 40px 0; }
@@ -654,18 +655,19 @@ footer p {
 [data-page-name="events-page"] .main-event-filters:not(:last-of-type) {
   border-right: 1px solid rgba(0, 0, 0, 0.2); }
 
-[data-page-name="events-page"] #event-list {
+[data-page-name="events-page"] #event-list,
+[data-page-name="index-page"] #event-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around; }
 
-[data-page-name="events-page"] .event-list-item-wraps.background-pictures {
+[data-page-name="events-page"] .event-list-item-wraps.background-pictures, [data-page-name="index-page"] .event-list-item-wraps.background-pictures {
   margin: 30px 1em;
   background-color: black;
   background-size: cover;
   background-position: center; }
 
-[data-page-name="events-page"] .event-list-items {
+[data-page-name="events-page"] .event-list-items, [data-page-name="index-page"] .event-list-items {
   display: flex;
   width: 300px;
   height: 300px;
@@ -676,14 +678,14 @@ footer p {
   background: rgba(26, 35, 126, 0.5);
   /* primary color */ }
 
-[data-page-name="events-page"] .event-titles {
+[data-page-name="events-page"] .event-titles, [data-page-name="index-page"] .event-titles {
   font-size: 20px; }
 
-[data-page-name="events-page"] .event-date-place-wraps {
+[data-page-name="events-page"] .event-date-place-wraps, [data-page-name="index-page"] .event-date-place-wraps {
   text-align: right;
   text-transform: uppercase; }
 
-[data-page-name="events-page"] .event-places:before {
+[data-page-name="events-page"] .event-places:before, [data-page-name="index-page"] .event-places:before {
   content: 'at ';
   text-transform: lowercase; }
 
