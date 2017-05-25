@@ -47,7 +47,7 @@
 
 					</div>
 
-					<div class="buttons main-buttons links-inactive">Go to event list</div>
+					<div class="buttons main-buttons links-active" data-href="events.php">Go to event list</div>
 				</div>
 			</section>
 
