@@ -509,26 +509,59 @@ if (sActualPage=="my-account.php") {
 
 //update users
 $(document).on("click", "#account-save-changes-btn", function(){
-	var newFirstName = $("#account-name-input").val();
-	var newLastName = $("#account-surname-input").val();
-	var newEmail = $("#account-email-input").val();
-	var sUniqueId = localStorage.getItem("sUniqueId");
-	$.ajax({
-		"method":"POST",
-		"url":"api/api-edit-user.php",
-		"data"		: {
-			"firstName"	: newFirstName,
-			"lastName"	: newLastName,
-			"sUniqueId"	: sUniqueId,
-			"email"		: newEmail
-		},
-	});	
+	swal({
+	  title: "Are you sure?",
+	  text: "Your account will be modified on the server!",
+	  type: "warning",
+	  showCancelButton: true,
+	  confirmButtonClass: "btn-danger",
+	  confirmButtonText: "Yes, update it!",
+	  closeOnConfirm: true
+	},
+	  function(isConfirm) {
+  		if (isConfirm) {
+			var newFirstName = $("#account-name-input").val();
+			var newLastName = $("#account-surname-input").val();
+			var newEmail = $("#account-email-input").val();
+			var sUniqueId = localStorage.getItem("sUniqueId");
+			$.ajax({
+				"method":"POST",
+				"url":"api/api-edit-user.php",
+				"data"		: {
+					"firstName"	: newFirstName,
+					"lastName"	: newLastName,
+					"sUniqueId"	: sUniqueId,
+					"email"		: newEmail
+				},
+			});	
+		} else {
+		    swal("Cancelled", "Your changes has not taken place in the database :)", "error");
+  		}
+	});
+	
 });
 
 //delete users call
 $(document).on("click", "#account-delete-account-btn", function(){
 	var sUniqueId = localStorage.getItem("sUniqueId");
-	fnDeleteUser(sUniqueId);
+	swal({
+	  title: "Are you sure?",
+	  text: "Your will not be able to recover this user!",
+	  type: "warning",
+	  showCancelButton: true,
+	  confirmButtonClass: "btn-danger",
+	  confirmButtonText: "Yes, delete it!",
+	  closeOnConfirm: true
+	},
+	  function(isConfirm) {
+  		if (isConfirm) {
+	    	fnDeleteUser(sUniqueId);
+			window.location.href = "index.php";
+			localStorage.clear();
+			 } else {
+		    swal("Cancelled", "Your imaginary file is safe :)", "error");
+  		}
+	});
 	});
 
 //function for deleting users
@@ -538,7 +571,31 @@ function fnDeleteUser(userId){
 		"method":"POST",
 		"url":"api/api-delete-user.php",
 		"data"		: {
-			"sUniqueId"	: sUniqueId
+			"sUniqueId"	: userId
 		},
 	});	
 };
+
+//call delete function from manage-user.php
+
+$(document).on("click", ".delete-buttons", function(){
+	var oClosestRow = $(this).closest(".tr");
+	var sUniqueId = $(oClosestRow).attr("id");
+	swal({
+	  title: "Are you sure?",
+	  text: "Your will not be able to recover this user!",
+	  type: "warning",
+	  showCancelButton: true,
+	  confirmButtonClass: "btn-danger",
+	  confirmButtonText: "Yes, delete it!",
+	  closeOnConfirm: true
+	},
+	  function(isConfirm) {
+  		if (isConfirm) {
+	    	fnDeleteUser(sUniqueId);
+	    	oClosestRow.slideUp();
+			 } else {
+		    swal("Cancelled", "Your imaginary file is safe :)", "error");
+  		}
+	});
+});

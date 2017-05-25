@@ -89,7 +89,7 @@ section {
   align-items: center; }
 
 .full-screen-covers {
-  height: 100vh;
+  height: 50vh;
   background-size: cover;
   background-position: center; }
 

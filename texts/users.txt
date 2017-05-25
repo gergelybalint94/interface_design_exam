@@ -4,16 +4,7 @@
         "firstName": "First name: balint",
         "lastName": "Last name: gergely",
         "password": "2",
-        "email": "Email: gergelybalint94@gmail.com",
-        "admin": true
-    },
-    {
-        "sUniqueId": 10002,
-        "firstName": "First name: ",
-        "lastName": "Last name: ",
-        "password": "",
-        "email": "Email: ",
-        "admin": true
+        "email": "gergelybalint94@gmail.com"
     },
     {
         "sUniqueId": 10003,
@@ -23,26 +14,12 @@
         "email": ""
     },
     {
-        "sUniqueId": 10004,
-        "firstName": "Balint",
-        "lastName": "Gergely",
-        "password": "bali",
-        "email": "gergelybalint94@gmail.com"
-    },
-    {
-        "sUniqueId": 10005,
-        "firstName": "amilyen",
-        "lastName": "a",
-        "password": "333",
-        "email": "tikameggy",
-        "admin": "false"
-    },
-    {
         "sUniqueId": 10006,
-        "firstName": "Jonas",
-        "lastName": "David",
-        "password": "a",
-        "email": "a",
-        "admin": false
+        "firstName": "Eidvile",
+        "lastName": "Bagdonaite",
+        "password": "eidvile",
+        "email": "eidvile.bagdonaite@gmail.com",
+
+        
     }
 ]
