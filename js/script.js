@@ -19,6 +19,20 @@ var bLoggedIn = false;
 // EVENTS:
 // ██████████████████████████████
 
+// Check if someone is logged in or not:
+$(document).on("ready", function(){
+	if(localStorage.getItem("name")===null){
+		console.log("not logged in");
+	}else{
+		console.log("logged in");
+		bLoggedIn = true;
+		var name = localStorage.getItem("name");
+		var email = localStorage.getItem("email");
+		$("#account-name").append(name);
+		$("#account-email").append(email);
+	}
+});
+
 // Redirect when clicking on elements with 'data-href' attribute:
 $(document).on('click', '[data-href]', function(){
 	
@@ -129,28 +143,40 @@ $(document).on('click', '[data-page-name="manage-users-page"] #user-list .save-b
 		"lastName"	: sLastName,
 		"email"		: sEmail,
 		"admin"		: bIsAdmin
-	}
+	};
 
 	// Send data to back end:
 	$.ajax({
 		method		: 'post',
 		url 		: 'api/api-edit-user.php',
-		data 		: jFreshData,
-		dataType	: 'json'
+		data 		: jFreshData
 	})
-	.done(function( jResponse ){
+	.done(function( sResponse ){
 
+		if(fnCheckJsonString( sResponse )){
 
-		swal({
-		  title: jResponse.sStatusTitle,
-		  text: jResponse.sStatusMessage,
-		  type: jResponse.sStatusType,
-		  confirmButtonText: "Cool"
-		});
+			var jResponse = JSON.parse( sResponse );
+
+			swal({
+			  title: jResponse.sStatusTitle,
+			  text: jResponse.sStatusMessage,
+			  type: jResponse.sStatusType,
+			  confirmButtonText: "Cool"
+			});
+
+		} else {
+
+			swal({
+			  title: 'Error',
+			  text: 'You received the following message from the server: ' + sResponse,
+			  type: 'error',
+			  confirmButtonText: "Okay"
+			});
+
+		}
 
 		$('[data-page-name="manage-users-page"] .checkmark-cells').removeClass('uncommited');
 	});
-
 });
 
 // Change user's site admin status on manage user list page:
@@ -308,19 +334,15 @@ switch( sActualPage ){
 // FUNCTIONS:
 // ██████████████████████████████
 
-//Self calling function to check if someone is logged in or not
-$(document).on("ready", function(){
-	if(localStorage.getItem("name")===null){
-		console.log("not logged in");
-	}else{
-		console.log("logged in");
-		bLoggedIn = true;
-		var name = localStorage.getItem("name");
-		var email = localStorage.getItem("email");
-		$("#account-name").append(name);
-		$("#account-email").append(email);
-	}
-});
+// Check if a string is JSON formatted:
+function fnCheckJsonString( str ) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
 
 // Function to get SVG files as strings:
 function fnStringifySvg( sFilePath ){
@@ -576,7 +598,6 @@ $(document).on("click", "#account-delete-account-btn", function(){
 	});
 
 //function for deleting users
-
 function fnDeleteUser(userId){
 	$.ajax({
 		"method":"POST",
@@ -588,7 +609,6 @@ function fnDeleteUser(userId){
 };
 
 //call delete function from manage-user.php
-
 $(document).on("click", ".delete-buttons", function(){
 	var oClosestRow = $(this).closest(".tr");
 	var sUniqueId = $(oClosestRow).attr("id");
