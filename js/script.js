@@ -80,10 +80,21 @@ if( sActualPage === 'manage-users.php'){
 		var sBluePrint =
 			'<div class="tr" id="{{user-id}}">' +
 				'<h4 class="only-mobile">{{full-name}}</h4>' +
-				'<div class="td checkmark-cells fa {{icon}} fw links-active"><span class="only-mobile admin-action-texts">{{action}} site admin</span></div>' +
-				'<div class="td links-inactive first-names"><span class="only-mobile">First name:</span> {{firstName}}</div>' +
-				'<div class="td links-inactive last-names"><span class="only-mobile">Last name:</span> {{lastName}}</div>' +
-				'<div class="td links-inactive emails"><span class="only-mobile">Email:</span> {{email}}</div>' +
+				'<div class="td checkmark-cells fa {{icon}} fw links-active">' +
+					'<span class="only-mobile admin-action-texts">{{action}} site admin</span>' +
+				'</div>' +
+				'<div class="td links-inactive first-names">' +
+					'<span class="only-mobile">First name:</span>' +
+					'<span class="field-values">{{firstName}}</span>' +
+				'</div>' +
+				'<div class="td links-inactive last-names">' +
+					'<span class="only-mobile">Last name:</span>' +
+					'<span class="field-values">{{lastName}}</span>' +
+				'</div>' +
+				'<div class="td links-inactive emails">' +
+					'<span class="only-mobile">Email:</span>' +
+					'<span class="field-values">{{email}}</span>' +
+				'</div>' +
 				'<div class="td row-button-wraps">' +
 					'<div class="buttons main-buttons save-buttons links-active">Save</div>' +
 					'<div class="buttons danger-buttons delete-buttons links-inactive">Delete</div>' +
@@ -109,9 +120,9 @@ if( sActualPage === 'manage-users.php'){
 $(document).on('click', '[data-page-name="manage-users-page"] #user-list .save-buttons', function(){
 	var sRowToSave	= $( this ).parent().parent();
 	var bIsAdmin	= ( sRowToSave.find('.checkmark-cells').hasClass('fa-check') ) ? true : false;
-	var sFirstName	= sRowToSave.find('.first-names').text();
-	var sLastName	= sRowToSave.find('.last-names').text();
-	var sEmail		= sRowToSave.find('.emails').text();
+	var sFirstName	= sRowToSave.find('.first-names').find('.field-values').text();
+	var sLastName	= sRowToSave.find('.last-names').find('.field-values').text();
+	var sEmail		= sRowToSave.find('.emails').find('.field-values').text();
 	var jFreshData	= {
 		"sUniqueId"	: sRowToSave.attr('id'),
 		"firstName"	: sFirstName,
