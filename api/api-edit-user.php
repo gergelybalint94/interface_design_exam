@@ -32,6 +32,13 @@ $sajUsers = json_encode( $ajUsers , JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE )
 
 file_put_contents( $sFileName , $sajUsers );
 
-echo 'success';
+// Give response:
+$sjResponse = '{
+	"sStatusType" 		: "success",
+	"sStatusTitle"		: "Success",
+	"sStatusMessage"	: "You have successfully updated this user!"
+}';
+
+echo $sjResponse;
 
 ?>

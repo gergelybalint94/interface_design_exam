@@ -1,18 +1,19 @@
 [
     {
         "sUniqueId": 10001,
-        "firstName": "balint",
-        "lastName": "gergely",
+        "firstName": "First name: balint",
+        "lastName": "Last name: gergely",
         "password": "2",
-        "email": "gergelybalint94@gmail.com"
-
+        "email": "Email: gergelybalint94@gmail.com",
+        "admin": true
     },
     {
         "sUniqueId": 10002,
-        "firstName": "",
-        "lastName": "",
+        "firstName": "First name: ",
+        "lastName": "Last name: ",
         "password": "",
-        "email": ""
+        "email": "Email: ",
+        "admin": true
     },
     {
         "sUniqueId": 10003,
