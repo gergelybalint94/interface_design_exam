@@ -551,8 +551,31 @@ function fnDeleteUser(userId){
 		"method":"POST",
 		"url":"api/api-delete-user.php",
 		"data"		: {
-			"sUniqueId"	: sUniqueId
+			"sUniqueId"	: userId
 		},
 	});	
 };
 
+//call delete function from manage-user.php
+
+$(document).on("click", ".delete-buttons", function(){
+	var oClosestRow = $(this).closest(".tr");
+	var sUniqueId = $(oClosestRow).attr("id");
+	swal({
+	  title: "Are you sure?",
+	  text: "Your will not be able to recover this user!",
+	  type: "warning",
+	  showCancelButton: true,
+	  confirmButtonClass: "btn-danger",
+	  confirmButtonText: "Yes, delete it!",
+	  closeOnConfirm: true
+	},
+	  function(isConfirm) {
+  		if (isConfirm) {
+	    	fnDeleteUser(sUniqueId);
+	    	oClosestRow.slideUp();
+			 } else {
+		    swal("Cancelled", "Your imaginary file is safe :)", "error");
+  		}
+	});
+});
