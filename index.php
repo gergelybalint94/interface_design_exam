@@ -27,7 +27,7 @@
 			<section class="background-secondary" id="short-introduction">
 				<div class="content-max-width-narrowest">
 
-					<h4><img src="assets/logos/logo_white.png" style="height:1.3em" alt="OriginKBH"> is a place hosting events to discover the technology scene in Copenhagen</h4>
+					<h4><img src="assets/logos/logo_white.png" style="height:1.5em" alt="OriginKBH"> is a place hosting events to discover the technology scene in Copenhagen</h4>
 
 					<div class="buttons main-buttons links-active" data-href="about.php">About us</div>
 
@@ -39,17 +39,43 @@
 					<div id="event-list-content">
 
 						<h4>Check out the upcoming events:</h4>
-						<ul id="event-short-list">
-							<li class="event-list-items"></li>
-							<li class="event-list-items"></li>
-							<li class="event-list-items"></li>
-						</ul>
+						<section id="event-list">
 
-					</div>
+							<div class="event-list-item-wraps background-pictures links-active" style="background-image:url('assets/images/events-machine-learning.png');" data-href="single-event.php">
+								<div class="event-list-items">
+									<div class="event-titles fontWeight-medium">MICROSOFT Hackathon: Machine Learning for the Search for Extraterrestrial Intelligence</div>
+									<div class="event-date-place-wraps">
+										<div class="event-dates">May 26, 2017</div>
+										<div class="event-places">Origin KBH</div>
+									</div>
+								</div>
+							</div>
 
-					<div class="buttons main-buttons links-inactive">Go to event list</div>
-				</div>
-			</section>
+							<div class="event-list-item-wraps background-pictures links-inactive" style="background-image:url('assets/images/mr-robot.png');">
+								<div class="event-list-items">
+									<div class="event-titles fontWeight-medium">BLUE OCEAN ROBOTICS presents: Meet the scientist. Robotics.</div>
+									<div class="event-date-place-wraps">
+										<div class="event-dates">May 31, 2017</div>
+										<div class="event-places">Origin KBH</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="event-list-item-wraps background-pictures links-inactive" style="background-image:url('assets/images/biotech.jpg');">
+								<div class="event-list-items">
+									<div class="event-titles fontWeight-medium">Exploring the New Horizons of Nano Biotech</div>
+									<div class="event-date-place-wraps">
+										<div class="event-dates">June 16, 2017</div>
+										<div class="event-places">Origin KBH</div>
+									</div>
+								</div>
+							</div>
+							</section>
+								</div>
+
+								<div class="buttons main-buttons links-active" data-href="events.php">Go to event list</div>
+							</div>
+						</section>
 
 			<section class="background-primary" id="call-to-submit">
 				<div class="content-max-width-narrow">
