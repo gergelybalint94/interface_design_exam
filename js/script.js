@@ -79,19 +79,22 @@ if( sActualPage === 'manage-users.php'){
 
 		var sBluePrint =
 			'<div class="tr" id="{{user-id}}">' +
-				'<div class="td checkmark-cells fa {{icon}} fw links-active"></div>' +
-				'<div class="td links-inactive first-names">{{firstName}}</div>' +
-				'<div class="td links-inactive last-names">{{lastName}}</div>' +
-				'<div class="td links-inactive emails">{{email}}</div>' +
+				'<h4 class="only-mobile">{{full-name}}</h4>' +
+				'<div class="td checkmark-cells fa {{icon}} fw links-active"><span class="only-mobile admin-action-texts">{{action}} site admin</span></div>' +
+				'<div class="td links-inactive first-names"><span class="only-mobile">First name:</span> {{firstName}}</div>' +
+				'<div class="td links-inactive last-names"><span class="only-mobile">Last name:</span> {{lastName}}</div>' +
+				'<div class="td links-inactive emails"><span class="only-mobile">Email:</span> {{email}}</div>' +
 				'<div class="td row-button-wraps">' +
 					'<div class="buttons main-buttons save-buttons links-active">Save</div>' +
-					'<div class="buttons warning-buttons delete-buttons links-inactive">Delete</div>' +
+					'<div class="buttons danger-buttons delete-buttons links-inactive">Delete</div>' +
 				'</div>' +
 			'</div>';
 
 		for(var i = 0; i < ajResults.length; i++){
 			var sBluePrintCopy = sBluePrint;
+			sBluePrintCopy = sBluePrintCopy.replace('{{full-name}}', ajResults[i].firstName + ' ' + ajResults[i].lastName );
 			sBluePrintCopy = sBluePrintCopy.replace('{{user-id}}', ajResults[i].sUniqueId );
+			sBluePrintCopy = sBluePrintCopy.replace('{{action}}', ( ajResults[i].admin === true ) ? 'Remove' : 'Add user as' );
 			sBluePrintCopy = sBluePrintCopy.replace('{{icon}}', ( ajResults[i].admin === true ) ? 'fa-check' : 'fa-circle-o' );
 			sBluePrintCopy = sBluePrintCopy.replace('{{firstName}}', ajResults[i].firstName );
 			sBluePrintCopy = sBluePrintCopy.replace('{{lastName}}', ajResults[i].lastName );
@@ -119,12 +122,21 @@ $(document).on('click', '[data-page-name="manage-users-page"] #user-list .save-b
 
 	// Send data to back end:
 	$.ajax({
-		method	: 'post',
-		url 	: 'api/api-edit-user.php',
-		data 	: jFreshData
+		method		: 'post',
+		url 		: 'api/api-edit-user.php',
+		data 		: jFreshData,
+		dataType	: 'json'
 	})
-	.done(function( sResponse ){
-		alert(sResponse);
+	.done(function( jResponse ){
+
+
+		swal({
+		  title: jResponse.sStatusTitle,
+		  text: jResponse.sStatusMessage,
+		  type: jResponse.sStatusType,
+		  confirmButtonText: "Cool"
+		});
+
 		$('[data-page-name="manage-users-page"] .checkmark-cells').removeClass('uncommited');
 	});
 
@@ -132,8 +144,9 @@ $(document).on('click', '[data-page-name="manage-users-page"] #user-list .save-b
 
 // Change user's site admin status on manage user list page:
 $(document).on('click', '[data-page-name="manage-users-page"] .checkmark-cells', function(){
-	var bUncommited	= $( this ).hasClass('uncommited');
-	var bIsAdmin	= $( this ).hasClass('fa-check');
+	var bUncommited		= $( this ).hasClass('uncommited');
+	var bIsAdmin		= $( this ).hasClass('fa-check');
+	var sMobileLabel	= $( this ).find('.admin-action-texts');
 
 	// Check if site admin status has been changed:
 	if( !bUncommited ){
@@ -147,6 +160,13 @@ $(document).on('click', '[data-page-name="manage-users-page"] .checkmark-cells',
 		$( this ).removeClass('fa-check').addClass('fa-circle-o');
 	} else {
 		$( this ).removeClass('fa-circle-o').addClass('fa-check');
+	}
+
+	// Change text:
+	if( sMobileLabel.text() === 'Add user as site admin' ){
+		sMobileLabel.text('Remove site admin');
+	} else {
+		sMobileLabel.text('Add user as site admin');
 	}
 });
 

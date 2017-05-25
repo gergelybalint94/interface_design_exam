@@ -1,8 +1,8 @@
 [
     {
         "sUniqueId": 10001,
-        "firstName": "balint",
-        "lastName": "gergely",
+        "firstName": "First name: balint",
+        "lastName": "Last name: gergely",
         "password": "2",
         "email": "gergelybalint94@gmail.com"
     },

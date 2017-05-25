@@ -30,14 +30,14 @@
 				<div id="user-list">
 
 					<!-- Header row: -->
-					<div class="tr">
+					<div class="tr" id="header-row">
 						<div class="td fontWeight-medium checkmark-cells fa fa-key fw"></div>
 						<div class="td fontWeight-medium">Name</div>
 						<div class="td fontWeight-medium">Surname</div>
 						<div class="td fontWeight-medium">Email</div>
 						<div class="td fontWeight-medium row-button-wraps"></div>
 					</div>
-					
+
 				</div>
 			</section>
 		</div>
