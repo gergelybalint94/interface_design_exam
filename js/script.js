@@ -6,21 +6,6 @@ var bLoggedIn = false;
 
 
 
-swal({
-  title: "Are you sure?",
-  text: "You will not be able to recover this imaginary file!",
-  type: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#DD6B55",
-  confirmButtonText: "Yes, delete it!",
-  closeOnConfirm: false
-},
-function(){
-  swal("Deleted!", "Your imaginary file has been deleted.", "success");
-});
-
-
-
 
 
 
@@ -32,10 +17,7 @@ function(){
 
 // Check if someone is logged in or not:
 $(document).on("ready", function(){
-	if(localStorage.getItem("name")===null){
-		console.log("not logged in");
-	}else{
-		console.log("logged in");
+	if(localStorage.getItem("name")!==null){
 		bLoggedIn = true;
 		var name = localStorage.getItem("name");
 		var email = localStorage.getItem("email");
@@ -367,7 +349,14 @@ function fnStringifySvg( sFilePath ){
 	    sOutput = sSvgCode;
 	  },
 	  error: function(){
-	  	console.log('file "' + sFilePath + '" could not be found!');
+
+		swal({
+		  title: 'Error',
+		  text: 'file "' + sFilePath + '" could not be found!',
+		  type: 'error',
+		  confirmButtonText: "Okay"
+		});
+
 	  }
 	});
 	
