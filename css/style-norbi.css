@@ -54,9 +54,12 @@
   padding:10px;
   align-items:center;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: row;}
+
+[data-page-name="manage-users-page"] #user-list .field-values {
   overflow: hidden;
-  text-overflow: ellipsis; }
+  text-overflow: ellipsis; 
+}
 
 [data-page-name="manage-users-page"] #user-list .row-button-wraps .buttons {
   margin:0 10px;
