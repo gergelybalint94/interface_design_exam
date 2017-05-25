@@ -1013,6 +1013,21 @@ footer p {
 [data-page-name="my-account-page"] #account-delete-account-btn:hover {
   cursor: pointer; }
 
+/*designing sweetalert*/
+.sweet-alert {
+  border-radius: 2px; }
+
+.sweet-alert h2 {
+  font-family: 'Roboto' !important;
+  font-weight: 300;
+  color: black; }
+
+.sweet-alert button {
+  border-radius: 2px; }
+
+.sa-icon {
+  display: none !important; }
+
 /*
 	--------------------------
 		MOBILE SCREEN RULES:
